@@ -7,46 +7,55 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 .btn { transition: .3s ease; }
-.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #0008; }
+.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #ff149377; }
 </style>
 </head>
 
-<body class="bg-black text-slate-200 min-h-screen flex flex-col">
+<body class="text-slate-200 min-h-screen flex flex-col bg-black overflow-x-hidden">
 
-<header class="w-full z-40 bg-black/50 backdrop-blur-sm fixed top-0">
+<div class="fixed inset-0 z-0 w-full h-full">
+    <img src="../homeimages/HSMJR2026(19-07-2026)-20 (1).jpg" 
+        alt="SDA Productions WA Production Background"
+        class="w-full h-full object-cover fixed opacity-40">
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
+
+<header class="w-full z-40 bg-black/50 backdrop-blur-sm fixed top-0 border-b border-pink-900/30">
 <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-<a href="https://www.sdaproductionswa.com.au/" class="font-bold text-white text-xl hover:text-indigo-400 transition-colors">← Back to Main Site</a>
+<a href="https://www.sdaproductionswa.com.au/" class="font-bold text-white text-xl hover:text-pink-400 transition-colors">← Back to Main Site</a>
 </nav>
 </header>
 
-<main class="flex-grow flex items-center justify-center relative px-6 pt-20">
+<main class="flex-grow flex items-center justify-center relative px-6 z-20 pt-28 pb-12">
     
-    <div class="absolute inset-0 z-0 opacity-20">
-        </div>
-
-    <div class="relative z-10 max-w-2xl w-full bg-slate-900/80 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-slate-800">
+    <div class="relative w-full max-w-2xl bg-slate-950/80 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-pink-900/30 overflow-hidden">
         
-        <h1 class="text-5xl font-bold text-white mb-2 tracking-tight">Legally Blonde JR.</h1>
-        <h2 class="text-2xl text-indigo-400 font-semibold mb-6">Auditions Coming Soon</h2>
-        
-        <p class="text-lg text-slate-300 mb-10">
-            We are preparing something spectacular. Join the mailing list to be the absolute first to know when the audition pack drops and sign-ups open.
-        </p>
+        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 via-fuchsia-500 to-pink-600 rounded-2xl opacity-10 animate-pulse blur-xl z-0"></div>
 
-        <form id="mailing-list-form" action="YOUR_WEB_APP_URL_GOES_HERE" method="POST" class="max-w-md mx-auto">
-            <div class="flex flex-col sm:flex-row gap-4">
-                <input type="email" name="email" required placeholder="Enter your email address..." 
-                    class="flex-grow px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
-                
-                <button type="submit" class="btn bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg whitespace-nowrap">
-                    Notify Me
-                </button>
+        <div class="relative z-10">
+            <h1 class="text-6xl font-extrabold mb-2 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-pink-200 to-pink-500 drop-shadow-md">Legally Blonde JR.</h1>
+            <h2 class="text-3xl text-pink-300 font-semibold mb-8 tracking-tight">Auditions Coming Soon</h2>
+            
+            <p class="text-lg text-slate-300 mb-10 max-w-md mx-auto">
+                Join our mailing list to receive the official audition pack, character breakdowns, and registration details the moment they are released.
+            </p>
+
+            <form id="mailing-list-form" action="YOUR_WEB_APP_URL_GOES_HERE" method="POST" class="max-w-md mx-auto relative z-30">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" name="email" required placeholder="Enter your email address..." 
+                        class="flex-grow px-5 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-colors shadow-inner">
+                    
+                    <button type="submit" class="btn bg-pink-600 px-8 py-4 rounded-xl font-bold text-white shadow-lg whitespace-nowrap text-lg">
+                        Register Interest
+                    </button>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 text-left px-2">We respect your privacy. Audition updates only.</p>
+            </form>
+
+            <div id="success-message" class="hidden text-pink-300 font-bold text-2xl py-8 tracking-tight">
+                Success.<br>
+                <span class="text-pink-100 text-lg font-medium mt-2 block">You have been added to the mailing list. Keep an eye on your inbox.</span>
             </div>
-            <p class="text-sm text-slate-500 mt-4 text-left">We respect your inbox. No spam, just audition info.</p>
-        </form>
-
-        <div id="success-message" class="hidden text-green-400 font-bold text-xl py-6 animate-pulse">
-            Success! You've been added to the VIP mailing list. Keep an eye on your inbox!
         </div>
 
     </div>
@@ -57,9 +66,8 @@
     const successMessage = document.getElementById('success-message');
 
     form.addEventListener('submit', e => {
-        e.preventDefault(); // Stops the page from reloading
+        e.preventDefault(); 
         
-        // Change button text so they know it's working
         const btn = form.querySelector('button');
         btn.innerHTML = 'Sending...';
         btn.classList.add('opacity-75', 'cursor-not-allowed');
@@ -68,12 +76,12 @@
             method: 'POST',
             body: new FormData(form),
         }).then(response => {
-            // Hide form and show success message
             form.style.display = 'none';
             successMessage.classList.remove('hidden');
         }).catch(error => {
             console.error('Error!', error.message);
             btn.innerHTML = 'Error - Try Again';
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
         });
     });
 </script>
