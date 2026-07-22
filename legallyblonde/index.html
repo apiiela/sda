@@ -8,6 +8,15 @@
 <style>
 .btn { transition: .3s ease; }
 .btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #ff149377; }
+
+/* Custom CSS for a slower pulse animation (6 seconds duration) */
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.1; }
+}
+.animate-pulse-slow {
+    animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 </style>
 </head>
 
@@ -28,9 +37,9 @@
 
 <main class="flex-grow flex items-center justify-center relative px-6 z-20 pt-28 pb-12">
     
-    <div class="relative w-full max-w-2xl bg-slate-950/80 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-pink-900/30 overflow-hidden">
+    <div class="relative w-full max-w-2xl bg-slate-950/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-pink-900/30 overflow-hidden">
         
-        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 via-fuchsia-500 to-pink-600 rounded-2xl opacity-10 animate-pulse blur-xl z-0"></div>
+        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 via-fuchsia-500 to-pink-600 rounded-2xl opacity-10 animate-pulse-slow blur-xl z-0"></div>
 
         <div class="relative z-10">
             <h1 class="text-6xl font-extrabold mb-2 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-pink-200 to-pink-500 drop-shadow-md">Legally Blonde JR.</h1>
