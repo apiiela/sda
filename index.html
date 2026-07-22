@@ -14,12 +14,11 @@ html { scroll-behavior: smooth; }
 .btn { transition: .3s ease; }
 .btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #0008; }
 
-/* Custom class for the increasing blur gradient */
 .blur-bottom {
     position: absolute;
     inset: auto 0 0 0;
-    height: 35%; /* Adjust this percentage to make the blur start higher or lower */
-    pointer-events: none; /* Ensures you can still click links underneath it */
+    height: 35%;
+    pointer-events: none;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
@@ -39,7 +38,7 @@ html { scroll-behavior: smooth; }
 </nav>
 </header>
 
-<section class="relative min-h-screen flex items-center">
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <img id="hero-image" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg" alt="SDA Productions WA Stage Performance">
 
 <div class="absolute inset-0 bg-black/60"></div>
