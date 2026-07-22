@@ -1,122 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDA Productions WA – Matilda Jr. & Frozen KIDS</title>
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/apiiela/sdaproductionswa/main/sdalogo.jpg">
-
-    <!-- SOCIAL MEDIA EMBED -->
-    <meta property="og:title" content="SDA Productions WA">
-    <meta property="og:description" content="Nurturing local talent and bringing spectacular, high-quality productions to the stage.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/apiiela/billyhdesign/main/design-banner.jpg">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
-
-        .animate-on-scroll { opacity: 0; transform: translateY(24px) scale(0.98); transition: 0.9s cubic-bezier(.22,1,.36,1); }
-        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0) scale(1); }
-
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-        .float-slow { animation: float 6s ease-in-out infinite; }
-        .float-delay { animation-delay: 1.5s; }
-
-        @keyframes pulse-slow { 0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99,102,241,.45); } 50% { transform: scale(1.04); box-shadow: 0 0 0 14px rgba(99,102,241,0); } }
-        .animate-pulse-slow { animation: pulse-slow 2.5s infinite ease-in-out; }
-
-        .btn-shimmer { position: relative; overflow: hidden; }
-        .btn-shimmer::after { content: ""; position: absolute; top: 0; left: -120%; width: 120%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent); transition: left .6s ease; }
-        .btn-shimmer:hover::after { left: 120%; }
-
-        .card-glow:hover { box-shadow: 0 35px 90px -20px rgba(99,102,241,.35); }
-        .about-gradient { background: linear-gradient(to bottom, #000 0%, #1e293b 100%); }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDA Productions WA</title>
+<link rel="icon" href="https://raw.githubusercontent.com/apiiela/sda/main/sdalogo.jpeg">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>html{scroll-behavior:smooth}body{font-family:Inter,sans-serif}#hero-image{transition:opacity 1.5s ease-in-out}.animate-on-scroll{opacity:0;transform:translateY(24px);transition:.9s}.animate-on-scroll.is-visible{opacity:1;transform:none}</style>
 </head>
-
 <body class="bg-black text-slate-200 antialiased">
-
-<header class="bg-black/80 shadow-lg sticky top-0 z-40 backdrop-blur-sm">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" class="flex items-center space-x-3">
-            <img src="https://raw.githubusercontent.com/apiiela/sdaproductionswa/main/sdalogo.jpeg" class="h-10 w-10" alt="SDA Logo">
-            <span class="text-lg font-bold text-slate-100">SDA Productions WA</span>
-        </a>
-        <div class="hidden md:flex space-x-8">
-            <a href="#shows" class="hover:text-indigo-400">Shows</a>
-            <a href="https://www.sdaproductionswa.com.au/auditions" class="hover:text-indigo-400">Auditions</a>
-            <a href="#about" class="hover:text-indigo-400">About</a>
-            <a href="#contact" class="hover:text-indigo-400">Contact</a>
-            <a href="portal.html" class="hover:text-indigo-400">Portal</a>
-        </div>
-    </nav>
-</header>
-
-<section class="relative min-h-screen flex items-center bg-cover bg-center" style="background-image:url('https://raw.githubusercontent.com/apiiela/billyhdesign/main/design-banner.jpg')">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="container mx-auto px-6 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll">Welcome to SDA Productions WA</h1>
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 animate-on-scroll">Nurturing local talent and bringing spectacular, high-quality productions to the stage.</p>
-        <a href="#shows" class="inline-block bg-indigo-600 py-3 px-8 rounded-lg font-bold animate-pulse-slow">See Our 2026 Season</a>
-    </div>
-</section>
-
-<section id="shows" class="py-24 bg-black">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-14 animate-on-scroll">Our 2026 Season</h2>
-        <div class="bg-slate-900 border border-slate-700 rounded-lg shadow-xl overflow-hidden transition hover:-translate-y-3 animate-on-scroll card-glow">
-            <div class="bg-black p-8 flex flex-col md:flex-row justify-center items-center gap-12">
-                <div class="flex justify-center items-center w-full md:w-1/2">
-                    <img src="https://raw.githubusercontent.com/apiiela/sdaproductionswa/main/MATILDA%20JR_FULL_VERTICAL_4C.jpg" alt="Matilda The Musical JR" class="max-h-80 w-auto rounded-lg object-contain float-slow" />
-                </div>
-                <div class="flex justify-center items-center w-full md:w-1/2">
-                    <img src="https://raw.githubusercontent.com/apiiela/sdaproductionswa/main/FZN_KIDS_DTL_Hero_Logo.png" alt="Frozen KIDS" class="max-h-80 w-auto rounded-lg object-contain float-slow float-delay" />
-                </div>
-            </div>
-            <div class="p-10 text-center">
-                <h3 class="text-3xl font-bold text-white mb-3">Matilda The Musical JR. & Disney’s Frozen KIDS</h3>
-                <span class="block text-indigo-400 font-semibold mb-4">Double Bill · January & February 2026</span>
-                <p class="text-slate-300 max-w-xl mx-auto mb-10">Two beloved stories. One unforgettable theatrical experience.</p>
-                <a href="https://www.trybooking.com/DILIK" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 py-4 px-12 rounded-lg font-bold hover:bg-indigo-500 btn-shimmer animate-pulse-slow">Buy Tickets</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="py-24 about-gradient text-center">
-    <div class="container mx-auto px-6 max-w-3xl">
-        <h2 class="text-3xl font-bold text-white mb-4 animate-on-scroll">About SDA Productions WA</h2>
-        <p class="text-lg text-slate-300 animate-on-scroll">SDA Productions WA is committed to providing a quality, positive, and supportive environment to the local community, nurturing talent and bringing spectacular productions to the stage.</p>
-    </div>
-</section>
-
-<footer id="contact" class="bg-black py-16 text-center">
-    <p class="mb-6">Email us at</p>
-    <a href="mailto:sdaproductionswa@gmail.com" class="bg-indigo-600 py-3 px-10 rounded-lg font-bold">sdaproductionswa@gmail.com</a>
-    <p class="mt-8 text-sm">© 2025 SDA Productions WA</p>
-</footer>
-
+<header class="bg-black/80 shadow-lg sticky top-0 z-40 backdrop-blur-sm"><nav class="container mx-auto px-6 py-4 flex justify-between items-center"><a href="/" class="flex items-center space-x-3"><img src="https://raw.githubusercontent.com/apiiela/sda/main/sdalogo.jpeg" class="h-10 w-10"><span class="text-lg font-bold text-slate-100">SDA Productions WA</span></a><div class="hidden md:flex space-x-8"><a href="#shows">Shows</a><a href="https://www.sdaproductionswa.com.au/auditions">Auditions</a><a href="#about">About</a><a href="#contact">Contact</a><a href="portal.html">Portal</a></div></nav></header>
+<section class="relative min-h-screen flex items-center overflow-hidden"><img id="hero-image" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg"><div class="absolute inset-0 bg-black/70"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-on-scroll">Welcome to SDA Productions WA</h1><p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 animate-on-scroll">Nurturing local talent and bringing spectacular, high-quality productions to the stage.</p><a href="#shows" class="inline-block bg-indigo-600 py-3 px-8 rounded-lg font-bold">Explore Productions</a></div></section>
+<section id="shows" class="py-24 bg-black"><div class="container mx-auto px-6"><h2 class="text-4xl font-bold text-center mb-14">Our Productions</h2></div></section>
+<section id="about" class="py-24 bg-slate-900 text-center"><div class="container mx-auto px-6 max-w-3xl"><h2 class="text-3xl font-bold text-white mb-4">About SDA Productions WA</h2><p class="text-lg text-slate-300">SDA Productions WA is committed to providing a quality, positive, and supportive environment to the local community, nurturing talent and bringing spectacular productions to the stage.</p></div></section>
+<footer id="contact" class="bg-black py-16 text-center"><p class="mb-6">Email us at</p><a href="mailto:sdaproductionswa@gmail.com" class="bg-indigo-600 py-3 px-10 rounded-lg font-bold">sdaproductionswa@gmail.com</a><p class="mt-8 text-sm">© 2025 SDA Productions WA</p></footer>
 <script>
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) entry.target.classList.add('is-visible');
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
+const heroImages=['486035663_1855750601903652_2252793329146107875_n.jpg','486090259_1855750548570324_1518266976028074513_n.jpg','486111428_1855750598570319_8565482492485227311_n.jpg','486259208_1855750208570358_3613785565258713483_n.jpg','622249808_10164599700326255_7894434441473250354_n.jpg','HSMJR2026(19-07-2026)-15 (1).jpg','HSMJR2026(19-07-2026)-17 (1).jpg','HSMJR2026(19-07-2026)-2 (1).jpg','HSMJR2026(19-07-2026)-20 (1).jpg','HSMJR2026(19-07-2026)-41 (1).jpg','HSMJR2026(19-07-2026)-63 (1).jpg','HSMJR2026(19-07-2026)-66 (1).jpg','HSMJR2026(19-07-2026)-9 (1).jpg'];
+for(let i=heroImages.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[heroImages[i],heroImages[j]]=[heroImages[j],heroImages[i]]}
+let i=0;const hero=document.getElementById('hero-image');function crop(){hero.style.objectPosition=hero.src.includes('486111428')?'center 25%':'center center'}crop();setInterval(()=>{let n=new Image();i=(i+1)%heroImages.length;n.src='homeimages/'+heroImages[i];n.onload=()=>{hero.style.opacity=0;setTimeout(()=>{hero.src=n.src;crop();hero.style.opacity=1},1500)}},10000);
+const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('is-visible')));document.querySelectorAll('.animate-on-scroll').forEach(x=>o.observe(x));
+</script></body></html>
