@@ -3,33 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SDA Productions WA | Youth Theatre Group</title>
+<title>SDA Productions WA</title>
 <meta name="description" content="SDA Productions WA is a premier youth theatre group bringing spectacular, high-quality productions like Legally Blonde JR and Shrek Kids to the stage.">
 <meta name="keywords" content="theatre groups, youth theatre, Legally Blonde JR, Shrek Kids, SDA Productions WA, Western Australia, local talent">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 html { scroll-behavior: smooth; }
-#hero-image { transition: opacity 1.5s ease; }
 .btn { transition: .3s ease; }
 .btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #0008; }
 
+/* The front image handles the fading transition */
+#hero-front { transition: opacity 1.5s ease-in-out; }
+
 .blur-bottom {
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 35%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35vh;
     pointer-events: none;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    z-index: 10;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
 }
 </style>
 </head>
 
-<body class="bg-black text-slate-200">
+<body class="text-slate-200 bg-black">
 
-<header class="absolute top-0 left-0 w-full z-40 bg-black/50 backdrop-blur-sm">
+<div class="fixed inset-0 w-full h-full z-0 bg-black">
+    <img id="hero-back" class="absolute inset-0 w-full h-full object-cover" src="" alt="">
+    
+    <img id="hero-front" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg" alt="SDA Productions WA Stage Performance">
+    
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
+
+<div class="blur-bottom"></div>
+
+<header class="fixed top-0 left-0 w-full z-40 bg-black/50 backdrop-blur-sm">
 <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
 <a class="font-bold text-white text-xl">SDA Productions WA</a>
 <div class="space-x-6">
@@ -38,49 +56,43 @@ html { scroll-behavior: smooth; }
 </nav>
 </header>
 
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-<img id="hero-image" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg" alt="SDA Productions WA Stage Performance">
+<main class="relative z-20 w-full">
+    
+    <section class="h-screen w-full flex items-center justify-center">
+        <div class="text-center container mx-auto px-6 pt-20">
+            <h1 class="text-5xl font-bold text-white drop-shadow-lg">Welcome to SDA Productions WA</h1>
+            <p class="my-8 text-lg text-gray-200 max-w-2xl mx-auto">One of the region's top theatre groups, nurturing local talent and bringing spectacular, high-quality youth productions to the stage.</p>
+            <a href="#shows" class="btn inline-block bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">Explore Productions</a>
+        </div>
+    </section>
 
-<div class="absolute inset-0 bg-black/60"></div>
+    <section id="shows" class="py-24 min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl text-center font-bold mb-12 drop-shadow-lg">Our Productions</h2>
 
-<div class="relative z-10 text-center container mx-auto px-6 pt-20">
-<h1 class="text-5xl font-bold text-white drop-shadow-lg">Welcome to SDA Productions WA</h1>
-<p class="my-8 text-lg text-gray-200 max-w-2xl mx-auto">One of the region's top theatre groups, nurturing local talent and bringing spectacular, high-quality youth productions to the stage.</p>
-<a href="#shows" class="btn inline-block bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white">Explore Productions</a>
-</div>
-</section>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="text-center">
+                    <div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
+                        <img src="LegallyBlonde.jpg" alt="Legally Blonde JR - SDA Productions WA" class="w-full h-full object-cover object-center">
+                    </div>
+                    <a href="https://www.sdaproductionswa.com.au/legallyblonde" class="btn relative z-30 inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
+                        Learn More
+                    </a>
+                </div>
 
-<section id="shows" class="relative py-24 overflow-hidden">
-<div class="container mx-auto px-6 relative z-10">
-<h2 class="text-4xl text-center font-bold mb-12">Our Productions</h2>
-
-<div class="grid md:grid-cols-2 gap-10">
-
-<div class="text-center">
-<div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
-<img src="LegallyBlonde.jpg" alt="Legally Blonde JR - SDA Productions WA" class="w-full h-full object-cover object-center">
-</div>
-
-<a href="https://www.sdaproductionswa.com.au/legallyblonde" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
-Learn More
-</a>
-</div>
-
-<div class="text-center">
-<div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
-<img src="ShrekKids.jpg" alt="Shrek Kids - SDA Productions WA" class="w-full h-full object-cover object-center">
-</div>
-
-<a href="https://www.sdaproductionswa.com.au/shrek" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
-Learn More
-</a>
-</div>
-
-</div>
-</div>
-
-<div class="blur-bottom"></div>
-</section>
+                <div class="text-center">
+                    <div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
+                        <img src="ShrekKids.jpg" alt="Shrek Kids - SDA Productions WA" class="w-full h-full object-cover object-center">
+                    </div>
+                    <a href="https://www.sdaproductionswa.com.au/shrek" class="btn relative z-30 inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</main>
 
 <script>
 const imgs = [
@@ -100,47 +112,65 @@ const imgs = [
 ];
 
 function shuffle(array){
-for(let i=array.length-1;i>0;i--){
-let j=Math.floor(Math.random()*(i+1));
-[array[i],array[j]]=[array[j],array[i]];
-}
+    for(let i = array.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 shuffle(imgs);
 
-let i=0;
-const hero=document.getElementById('hero-image');
+let i = 0;
+const heroFront = document.getElementById('hero-front');
+const heroBack = document.getElementById('hero-back');
 
-function updateCrop(){
-if(hero.src.includes('486111428')){
-hero.style.objectPosition='center 25%';
-}else{
-hero.style.objectPosition='center center';
-}
-}
-
-updateCrop();
-
-setInterval(()=>{
-hero.style.opacity=0;
-
-setTimeout(()=>{
-i++;
-
-if(i>=imgs.length){
-shuffle(imgs);
-i=0;
+// Helper function to keep that specific image cropped at 25% height
+function updateCrop(element, filename){
+    if(filename.includes('486111428')){
+        element.style.objectPosition = 'center 25%';
+    } else {
+        element.style.objectPosition = 'center center';
+    }
 }
 
-hero.src='homeimages/'+imgs[i];
+updateCrop(heroFront, heroFront.src);
 
-updateCrop();
+setInterval(() => {
+    i++;
+    if(i >= imgs.length){
+        shuffle(imgs);
+        i = 0;
+    }
 
-hero.style.opacity=1;
+    const nextImageSrc = 'homeimages/' + imgs[i];
 
-},1500);
+    // 1. Put the new image on the BACK layer
+    heroBack.src = nextImageSrc;
+    updateCrop(heroBack, imgs[i]);
 
-},6000);
+    // 2. Wait for the back image to fully download
+    heroBack.onload = () => {
+        
+        // 3. Smoothly fade out the front layer
+        heroFront.style.opacity = 0;
+
+        // 4. Once the 1.5s fade finishes, reset the layers for the next cycle
+        setTimeout(() => {
+            // Temporarily turn off the transition so we can snap the front layer back to full opacity instantly
+            heroFront.style.transition = 'none'; 
+            heroFront.src = nextImageSrc;
+            updateCrop(heroFront, imgs[i]);
+            heroFront.style.opacity = 1;
+            
+            // Turn the transition back on for the next fade
+            setTimeout(() => {
+                heroFront.style.transition = 'opacity 1.5s ease-in-out';
+            }, 50);
+            
+        }, 1500); 
+    };
+
+}, 6000);
 </script>
 </body>
 </html>
