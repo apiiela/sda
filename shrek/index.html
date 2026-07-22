@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shrek Kids | Auditions | SDA Productions WA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.btn { transition: .3s ease; }
+.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #15803d77; }
+</style>
+</head>
 
+<body class="text-slate-200 min-h-screen flex flex-col bg-black overflow-x-hidden">
+
+<div class="fixed inset-0 z-0 w-full h-full">
+    <img src="DSCF2029.JPG" 
+        alt="SDA Productions WA Shrek Kids Background"
+        class="w-full h-full object-cover fixed opacity-40">
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
+
+<header class="w-full z-40 bg-black/50 backdrop-blur-sm fixed top-0 border-b border-green-900/30">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="https://www.sdaproductionswa.com.au/" class="font-bold text-white text-xl hover:text-green-400 transition-colors">← Back to Main Site</a>
+</nav>
+</header>
+
+<main class="flex-grow flex items-center justify-center relative px-6 z-20 pt-28 pb-12">
+    
+    <div class="relative w-full max-w-2xl bg-slate-950/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-green-900/30 overflow-hidden">
+        
+        <div class="relative z-10">
+            <h1 class="text-6xl font-extrabold mb-2 pb-2 leading-tight tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-green-200 to-green-500 drop-shadow-md">Shrek Kids.</h1>
+            
+            <h2 class="text-3xl text-green-300 font-semibold mb-8 tracking-tight">Auditions Coming Soon</h2>
+            
+            <p class="text-lg text-slate-300 mb-10 max-w-md mx-auto">
+                Join our mailing list to receive the official audition pack, character breakdowns, and registration details the moment they are released.
+            </p>
+
+            <form id="mailing-list-form" action="https://script.google.com/macros/s/AKfycbxevL4GhYL0SdkQpo4wKqEqOmlf0LfgK764nt42u4-GepdkmEek-JIkTSB-T6MqD_QM/exec" method="POST" class="max-w-md mx-auto relative z-30">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" name="email" required placeholder="Enter your email address..." 
+                        class="flex-grow px-5 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors shadow-inner">
+                    
+                    <button type="submit" class="btn bg-green-700 px-8 py-4 rounded-xl font-bold text-white shadow-lg whitespace-nowrap text-lg">
+                        Register Interest
+                    </button>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 text-left px-2">We respect your privacy. Audition updates only.</p>
+            </form>
+
+            <div id="success-message" class="hidden text-green-300 font-bold text-2xl py-8 tracking-tight">
+                Success.<br>
+                <span class="text-green-100 text-lg font-medium mt-2 block">You have been added to the mailing list. Keep an eye on your inbox.</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    const form = document.getElementById('mailing-list-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Stops the page from reloading
+        
+        // Change button text so they know it's working
+        const btn = form.querySelector('button');
+        btn.innerHTML = 'Sending...';
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+        // You can use the same Google Apps Script for both forms or create a new one!
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        }).then(response => {
+            // Hide form and show success message
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+        }).catch(error => {
+            console.error('Error!', error.message);
+            btn.innerHTML = 'Error - Try Again';
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+        });
+    });
+</script>
+
+</body>
+</html>
