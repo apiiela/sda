@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legally Blonde JR | SDA Productions WA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.btn { transition: .3s ease; }
+.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #0008; }
+</style>
+</head>
+
+<body class="bg-black text-slate-200 min-h-screen flex flex-col">
+
+<header class="w-full z-40 bg-black/50 backdrop-blur-sm fixed top-0">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="https://www.sdaproductionswa.com.au/" class="font-bold text-white text-xl hover:text-indigo-400 transition-colors">← Back to Main Site</a>
+</nav>
+</header>
+
+<main class="flex-grow flex items-center justify-center relative px-6 pt-20">
+    
+    <div class="absolute inset-0 z-0 opacity-20">
+        </div>
+
+    <div class="relative z-10 max-w-2xl w-full bg-slate-900/80 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-slate-800">
+        
+        <h1 class="text-5xl font-bold text-white mb-2 tracking-tight">Legally Blonde JR.</h1>
+        <h2 class="text-2xl text-indigo-400 font-semibold mb-6">Auditions Coming Soon</h2>
+        
+        <p class="text-lg text-slate-300 mb-10">
+            We are preparing something spectacular. Join the mailing list to be the absolute first to know when the audition pack drops and sign-ups open.
+        </p>
+
+        <form id="mailing-list-form" action="YOUR_WEB_APP_URL_GOES_HERE" method="POST" class="max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <input type="email" name="email" required placeholder="Enter your email address..." 
+                    class="flex-grow px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
+                
+                <button type="submit" class="btn bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg whitespace-nowrap">
+                    Notify Me
+                </button>
+            </div>
+            <p class="text-sm text-slate-500 mt-4 text-left">We respect your inbox. No spam, just audition info.</p>
+        </form>
+
+        <div id="success-message" class="hidden text-green-400 font-bold text-xl py-6 animate-pulse">
+            Success! You've been added to the VIP mailing list. Keep an eye on your inbox!
+        </div>
+
+    </div>
+</main>
+
+<script>
+    const form = document.getElementById('mailing-list-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Stops the page from reloading
+        
+        // Change button text so they know it's working
+        const btn = form.querySelector('button');
+        btn.innerHTML = 'Sending...';
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        }).then(response => {
+            // Hide form and show success message
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+        }).catch(error => {
+            console.error('Error!', error.message);
+            btn.innerHTML = 'Error - Try Again';
+        });
+    });
+</script>
+
+</body>
+</html>
