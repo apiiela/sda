@@ -3,70 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SDA Productions WA</title>
+<title>SDA Productions WA | Youth Theatre Group</title>
+<meta name="description" content="SDA Productions WA is a premier youth theatre group bringing spectacular, high-quality productions like Legally Blonde JR and Shrek Kids to the stage.">
+<meta name="keywords" content="theatre groups, youth theatre, Legally Blonde JR, Shrek Kids, SDA Productions WA, Western Australia, local talent">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-html{scroll-behavior:smooth}
-#hero-image{transition:opacity 1.5s ease}
-.btn{transition:.3s ease}
-.btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 25px #0008}
+html { scroll-behavior: smooth; }
+#hero-image { transition: opacity 1.5s ease; }
+.btn { transition: .3s ease; }
+.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #0008; }
+
+/* Custom class for the increasing blur gradient */
+.blur-bottom {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 35%; /* Adjust this percentage to make the blur start higher or lower */
+    pointer-events: none; /* Ensures you can still click links underneath it */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
 </style>
 </head>
 
 <body class="bg-black text-slate-200">
 
-<header class="bg-black/80 sticky top-0 z-40">
-<nav class="container mx-auto px-6 py-4 flex justify-between">
-<a class="font-bold text-white">SDA Productions WA</a>
+<header class="absolute top-0 left-0 w-full z-40 bg-black/50 backdrop-blur-sm">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a class="font-bold text-white text-xl">SDA Productions WA</a>
 <div class="space-x-6">
-<a href="#shows">Shows</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a href="portal.html">Portal</a>
+<a href="#shows" class="hover:text-indigo-400 transition-colors">Shows</a>
 </div>
 </nav>
 </header>
 
 <section class="relative min-h-screen flex items-center">
-<img id="hero-image" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg">
+<img id="hero-image" class="absolute inset-0 w-full h-full object-cover" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg" alt="SDA Productions WA Stage Performance">
 
-<div class="absolute inset-0 bg-black/70"></div>
+<div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative z-10 text-center container mx-auto px-6">
-<h1 class="text-5xl font-bold text-white">Welcome to SDA Productions WA</h1>
-<p class="my-8">Nurturing local talent and bringing spectacular, high-quality productions to the stage.</p>
-<a href="#shows" class="btn inline-block bg-indigo-600 px-8 py-3 rounded-lg font-bold">Explore Productions</a>
+<div class="relative z-10 text-center container mx-auto px-6 pt-20">
+<h1 class="text-5xl font-bold text-white drop-shadow-lg">Welcome to SDA Productions WA</h1>
+<p class="my-8 text-lg text-gray-200 max-w-2xl mx-auto">One of the region's top theatre groups, nurturing local talent and bringing spectacular, high-quality youth productions to the stage.</p>
+<a href="#shows" class="btn inline-block bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white">Explore Productions</a>
 </div>
 </section>
 
-<section id="shows" class="py-24">
-<div class="container mx-auto px-6">
+<section id="shows" class="relative py-24 overflow-hidden">
+<div class="container mx-auto px-6 relative z-10">
 <h2 class="text-4xl text-center font-bold mb-12">Our Productions</h2>
 
 <div class="grid md:grid-cols-2 gap-10">
 
 <div class="text-center">
-<div class="h-96 overflow-hidden rounded-xl bg-slate-900">
-<img src="LegallyBlonde.jpg" class="w-full h-full object-cover object-center">
+<div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
+<img src="LegallyBlonde.jpg" alt="Legally Blonde JR - SDA Productions WA" class="w-full h-full object-cover object-center">
 </div>
 
-<a href="https://www.sdaproductionswa.com.au/legallyblonde" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold">
+<a href="https://www.sdaproductionswa.com.au/legallyblonde" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
 Learn More
 </a>
 </div>
 
 <div class="text-center">
-<div class="h-96 overflow-hidden rounded-xl bg-slate-900">
-<img src="ShrekKids.jpg" class="w-full h-full object-cover object-center">
+<div class="h-96 overflow-hidden rounded-xl bg-slate-900 shadow-2xl">
+<img src="ShrekKids.jpg" alt="Shrek Kids - SDA Productions WA" class="w-full h-full object-cover object-center">
 </div>
 
-<a href="https://www.sdaproductionswa.com.au/shrek" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold">
+<a href="https://www.sdaproductionswa.com.au/shrek" class="btn inline-block mt-6 bg-indigo-600 px-8 py-3 rounded-lg font-bold text-white shadow-lg">
 Learn More
 </a>
 </div>
 
 </div>
 </div>
+
+<div class="blur-bottom"></div>
 </section>
 
 <script>
@@ -129,3 +143,5 @@ hero.style.opacity=1;
 
 },6000);
 </script>
+</body>
+</html>
