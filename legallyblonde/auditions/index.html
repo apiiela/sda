@@ -105,7 +105,16 @@
             -webkit-text-fill-color: transparent;
         }
         
-        /* FAQ Icon Animation */
+        /* FAQ Accordion Fix */
+        .faq-content {
+            max-height: 0px;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;
+        }
+        .faq-item.faq-open .faq-content {
+            opacity: 1;
+        }
         .faq-icon {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -131,12 +140,13 @@
     <nav id="navbar" class="fixed w-full z-50 glass-nav py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="font-serif font-bold text-2xl tracking-wider text-charcoal">LB<span class="text-hotpink">.</span></a>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-gray-700">
+            <div class="hidden lg:flex space-x-6 text-sm font-semibold tracking-wide text-gray-700">
                 <a href="#overview" class="hover:text-hotpink transition-colors">Overview</a>
                 <a href="#process" class="hover:text-hotpink transition-colors">Auditions</a>
                 <a href="#characters" class="hover:text-hotpink transition-colors">Characters</a>
                 <a href="#rehearsals" class="hover:text-hotpink transition-colors">Rehearsals</a>
                 <a href="#faq" class="hover:text-hotpink transition-colors">FAQ</a>
+                <a href="#waiver" class="text-hotpink hover:text-charcoal transition-colors">Waiver</a>
             </div>
             <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-charcoal text-cream px-6 py-2 rounded-full text-sm font-bold hover:bg-black shadow-md">Book Audition</a>
         </div>
@@ -511,7 +521,7 @@
                             <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                         </span>
                     </button>
-                    <div class="faq-content overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0;">
+                    <div class="faq-content">
                         <div class="px-6 pb-6 pt-2 text-gray-700 font-medium leading-relaxed border-t border-gray-100 mx-6">
                             This form is essential for ensuring that we have all necessary contact and medical information for each cast member. Your prompt attention helps us ensure a smooth rehearsal process.
                         </div>
@@ -525,7 +535,7 @@
                             <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                         </span>
                     </button>
-                    <div class="faq-content overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0;">
+                    <div class="faq-content">
                         <div class="px-6 pb-6 pt-2 text-gray-700 font-medium leading-relaxed border-t border-gray-100 mx-6">
                             Please wear clothing that is comfortable and allows for easy movement (e.g. active wear or theatre blacks) to ensure comfort and ease of movement when learning choreography.
                         </div>
@@ -539,7 +549,7 @@
                             <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                         </span>
                     </button>
-                    <div class="faq-content overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0;">
+                    <div class="faq-content">
                         <div class="px-6 pb-6 pt-2 text-gray-700 font-medium leading-relaxed border-t border-gray-100 mx-6">
                             Yes. Everyone must learn the ensemble track alongside the excerpts for any lead/supporting character you plan to audition for.
                         </div>
@@ -553,7 +563,7 @@
                             <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                         </span>
                     </button>
-                    <div class="faq-content overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0;">
+                    <div class="faq-content">
                         <div class="px-6 pb-6 pt-2 text-gray-700 font-medium leading-relaxed border-t border-gray-100 mx-6">
                             If you do not receive a call-back, this does not mean you have not been cast in the production. Call-backs are for lead and supporting roles only.
                         </div>
@@ -604,24 +614,27 @@
         </div>
     </section>
 
+    <section id="waiver" class="py-24 px-6 bg-hotpink text-white relative z-10 shadow-inner">
+        <div class="max-w-4xl mx-auto text-center reveal-up">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-8 shadow-lg text-hotpink">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Mandatory Audition Waiver</h2>
+            <p class="text-xl mb-12 font-medium text-pink-100 leading-relaxed max-w-2xl mx-auto">Every auditionee must print, fill out, and bring the Media Consent & Participation Waiver to their audition. You cannot audition without this document.</p>
+            <a href="../../Sda%20Productions%20Wa%20%E2%80%93%20Media%20Consent%20&%20Participation%20Waiver.pdf" target="_blank" class="btn-spring bg-white text-hotpink px-10 py-5 rounded-full font-bold text-xl shadow-[0_15px_30px_-5px_rgba(0,0,0,0.3)] hover:bg-gray-50 transition inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download Official Waiver
+            </a>
+        </div>
+    </section>
+
     <section id="register" class="py-24 px-6 relative z-10">
         <div class="max-w-2xl mx-auto glass-panel bg-white p-12 rounded-3xl text-center border-2 border-hotpink/20 reveal-up shadow-[0_15px_40px_-10px_rgba(216,17,89,0.15)] flex flex-col items-center">
-            
             <h2 class="text-4xl font-serif font-bold mb-4 text-charcoal">Join The Cast</h2>
             <p class="text-gray-700 font-medium mb-8 text-lg">Secure your audition slot now via TryBooking.</p>
-            <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-hotpink px-10 py-5 rounded-full font-bold text-white text-xl shadow-[0_10px_20px_-10px_rgba(216,17,89,0.6)] border-2 border-hotpink w-full sm:w-auto inline-block mb-12">
+            <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-hotpink px-10 py-5 rounded-full font-bold text-white text-xl shadow-[0_10px_20px_-10px_rgba(216,17,89,0.6)] border-2 border-hotpink w-full sm:w-auto inline-block">
                 Book Audition
             </a>
-
-            <div class="w-full h-px bg-gray-200 mb-10"></div>
-
-            <h3 class="text-2xl font-serif font-bold mb-3 text-charcoal">Required Audition Waiver</h3>
-            <p class="text-hotpink font-bold mb-6">This waiver MUST be printed, filled out, and brought with you to your audition.</p>
-            <a href="../../sda/Sda%20Productions%20Wa%20%E2%80%93%20Media%20Consent%20&%20Participation%20Waiver.pdf" target="_blank" class="btn-spring bg-white text-charcoal px-8 py-4 rounded-full font-bold shadow-sm border border-gray-300 hover:bg-gray-50 transition w-full sm:w-auto inline-flex items-center justify-center gap-2">
-                <svg class="w-5 h-5 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                Media Consent & Participation Waiver
-            </a>
-            
         </div>
     </section>
 
@@ -639,7 +652,6 @@
         const authPassword = document.getElementById('auth-password');
         const authError = document.getElementById('auth-error');
 
-        // Lock scroll initially
         document.body.style.overflow = 'hidden';
 
         authForm.addEventListener('submit', (e) => {
@@ -647,7 +659,7 @@
             if (authPassword.value === 'SDA2027') {
                 authOverlay.style.opacity = '0';
                 authOverlay.style.visibility = 'hidden';
-                document.body.style.overflow = ''; // Unlock scroll
+                document.body.style.overflow = '';
             } else {
                 authError.classList.remove('hidden');
                 authPassword.value = '';
@@ -683,23 +695,23 @@
             }
         });
 
-        // Advanced FAQ Accordion Logic
+        // Fixed FAQ Accordion Logic
         document.querySelectorAll('.faq-btn').forEach(button => {
             button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const faqContent = faqItem.querySelector('.faq-content');
-                const isOpen = faqItem.classList.contains('faq-open');
+                const currentItem = button.closest('.faq-item');
+                const content = currentItem.querySelector('.faq-content');
+                const isOpen = currentItem.classList.contains('faq-open');
 
-                // Close all other items
+                // Close all other items explicitly
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('faq-open');
-                    item.querySelector('.faq-content').style.maxHeight = null;
+                    item.querySelector('.faq-content').style.maxHeight = '0px';
                 });
 
-                // Toggle current item
+                // Open clicked item if it was closed
                 if (!isOpen) {
-                    faqItem.classList.add('faq-open');
-                    faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+                    currentItem.classList.add('faq-open');
+                    content.style.maxHeight = content.scrollHeight + "px";
                 }
             });
         });
@@ -739,7 +751,6 @@
         closeBtn.addEventListener('click', closeModal);
         modalBg.addEventListener('click', closeModal);
 
-        // Escape key to close modal
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 closeModal();
