@@ -109,7 +109,7 @@
         .faq-icon {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .faq-item.active .faq-icon {
+        .faq-item.faq-open .faq-icon {
             transform: rotate(180deg);
         }
     </style>
@@ -484,7 +484,7 @@
                     </div>
                     <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border border-gray-200 shadow-sm">
                         <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-xl">📝</div>
-                        <span class="font-bold text-lg text-charcoal">Guardian Form</span>
+                        <span class="font-bold text-lg text-charcoal leading-tight">Media Consent & Participation Waiver</span>
                     </div>
                     <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border border-gray-200 shadow-sm">
                         <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-xl">📄</div>
@@ -606,11 +606,22 @@
 
     <section id="register" class="py-24 px-6 relative z-10">
         <div class="max-w-2xl mx-auto glass-panel bg-white p-12 rounded-3xl text-center border-2 border-hotpink/20 reveal-up shadow-[0_15px_40px_-10px_rgba(216,17,89,0.15)] flex flex-col items-center">
+            
             <h2 class="text-4xl font-serif font-bold mb-4 text-charcoal">Join The Cast</h2>
             <p class="text-gray-700 font-medium mb-8 text-lg">Secure your audition slot now via TryBooking.</p>
-            <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-hotpink px-10 py-5 rounded-full font-bold text-white text-xl shadow-[0_10px_20px_-10px_rgba(216,17,89,0.6)] border-2 border-hotpink w-full sm:w-auto inline-block">
+            <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-hotpink px-10 py-5 rounded-full font-bold text-white text-xl shadow-[0_10px_20px_-10px_rgba(216,17,89,0.6)] border-2 border-hotpink w-full sm:w-auto inline-block mb-12">
                 Book Audition
             </a>
+
+            <div class="w-full h-px bg-gray-200 mb-10"></div>
+
+            <h3 class="text-2xl font-serif font-bold mb-3 text-charcoal">Required Audition Waiver</h3>
+            <p class="text-hotpink font-bold mb-6">This waiver MUST be printed, filled out, and brought with you to your audition.</p>
+            <a href="../../sda/Sda%20Productions%20Wa%20%E2%80%93%20Media%20Consent%20&%20Participation%20Waiver.pdf" target="_blank" class="btn-spring bg-white text-charcoal px-8 py-4 rounded-full font-bold shadow-sm border border-gray-300 hover:bg-gray-50 transition w-full sm:w-auto inline-flex items-center justify-center gap-2">
+                <svg class="w-5 h-5 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Media Consent & Participation Waiver
+            </a>
+            
         </div>
     </section>
 
@@ -677,17 +688,17 @@
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
                 const faqContent = faqItem.querySelector('.faq-content');
-                const isOpen = faqItem.classList.contains('active');
+                const isOpen = faqItem.classList.contains('faq-open');
 
                 // Close all other items
                 document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
+                    item.classList.remove('faq-open');
                     item.querySelector('.faq-content').style.maxHeight = null;
                 });
 
                 // Toggle current item
                 if (!isOpen) {
-                    faqItem.classList.add('active');
+                    faqItem.classList.add('faq-open');
                     faqContent.style.maxHeight = faqContent.scrollHeight + "px";
                 }
             });
