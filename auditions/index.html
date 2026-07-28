@@ -114,20 +114,20 @@
             text-shadow: 2px 2px 0px #111111, 4px 4px 10px rgba(0,0,0,0.5);
         }
 
-        /* Mobile Scroll Prompt Animation */
-        @keyframes subtleBounce {
-            0%, 100% { transform: translateY(0); opacity: 0.8; }
-            50% { transform: translateY(8px); opacity: 1; }
+        /* Mobile Scroll Prompt Animation - Improved */
+        @keyframes strongBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(12px); }
         }
-        .animate-subtle-bounce {
-            animation: subtleBounce 2s infinite ease-in-out;
+        .animate-strong-bounce {
+            animation: strongBounce 2s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen relative">
 
     <header class="fixed top-0 left-0 w-full z-50 glass-header py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="font-sans font-bold tracking-widest text-sm md:text-base uppercase text-gray-300">
+        <div class="font-sans font-bold tracking-widest text-xs md:text-sm uppercase text-gray-300">
             SDA Productions WA
         </div>
         <div class="font-serif italic text-gray-300 text-sm md:text-base">
@@ -137,14 +137,14 @@
 
     <main class="flex-grow flex flex-col md:flex-row w-full md:h-screen pt-[60px] md:pt-0">
 
-        <a href="/shrek/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[90vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block border-b md:border-b-0 md:border-r border-white/10">
+        <a href="/shrek/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[90vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block border-b md:border-b-0 md:border-r border-white/10 relative">
             
             <img src="../shrek/DSCF2029.JPG" alt="Shrek KIDS" class="absolute inset-0 w-full h-full object-cover bg-zoom opacity-60">
             
             <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent z-10"></div>
             <div class="absolute inset-0 bg-charcoal/50 overlay-transition overlay-green z-10"></div>
 
-            <div class="relative z-20 w-full max-w-2xl mx-auto text-center px-6 flex flex-col items-center justify-center content-shift">
+            <div class="relative z-20 w-full max-w-2xl mx-auto text-center px-6 flex flex-col items-center justify-center content-shift pb-16 md:pb-0">
                 <p class="text-shrekGreen font-bold tracking-[0.25em] text-lg md:text-xl lg:text-2xl uppercase mb-4 drop-shadow-md font-nunito">Ages 7–12</p>
                 <h2 class="font-shrek text-7xl md:text-8xl lg:text-9xl mb-2 leading-none text-white tracking-wide shrek-title-shadow">SHREK</h2>
                 <h3 class="font-shrek text-4xl md:text-5xl lg:text-6xl text-shrekGreen mb-10 tracking-widest drop-shadow-md">KIDS</h3>
@@ -159,9 +159,11 @@
                 </span>
             </div>
 
-            <div class="md:hidden absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center animate-subtle-bounce text-gray-300">
-                <span class="font-sans text-xs uppercase tracking-widest mb-1 font-bold">Scroll for More</span>
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            <div class="md:hidden absolute bottom-8 w-full flex justify-center z-30 pointer-events-none">
+                <div class="bg-black/50 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full flex flex-col items-center shadow-2xl animate-strong-bounce">
+                    <span class="font-sans text-xs uppercase tracking-[0.3em] mb-1 font-bold text-gray-200">Scroll Down</span>
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
             </div>
         </a>
 
