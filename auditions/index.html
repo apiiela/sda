@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Audition Season | SDA Productions WA</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hotpink: '#D81159',
+                        shrekGreen: '#A6C400',
+                        charcoal: '#111111',
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        shrek: ['"Luckiest Guy"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #111111;
+            color: #FDFBF7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Smooth image zoom on hover */
+        .bg-zoom {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .group:hover .bg-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Overlay color shifts on hover */
+        .overlay-transition {
+            transition: background-color 0.5s ease;
+        }
+        .group:hover .overlay-pink {
+            background-color: rgba(216, 17, 89, 0.4);
+        }
+        .group:hover .overlay-green {
+            background-color: rgba(166, 196, 0, 0.4);
+        }
+
+        /* Button spring effect */
+        .btn-spring {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .group:hover .btn-spring {
+            transform: translateY(-4px) scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased h-screen flex flex-col">
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-header py-5 px-6 md:px-12 flex justify-between items-center">
+        <div class="font-sans font-bold tracking-widest text-sm uppercase text-gray-300">
+            SDA Productions WA
+        </div>
+        <div class="font-serif italic text-gray-400 text-sm">
+            2026 Audition Season
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col md:flex-row w-full h-full">
+
+        <a href="/legallyblonde/auditions/" class="group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block border-b md:border-b-0 md:border-r border-white/10">
+            
+            <img src="../homeimages/HSMJR2026(19-07-2026)-20 (1).jpg" alt="Legally Blonde JR" class="absolute inset-0 w-full h-full object-cover bg-zoom opacity-60">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-charcoal/40 overlay-transition overlay-pink z-10"></div>
+
+            <div class="relative z-20 text-center px-6 flex flex-col items-center transform transition-transform duration-500 group-hover:-translate-y-2">
+                <p class="text-hotpink font-bold tracking-[0.2em] text-sm uppercase mb-3 drop-shadow-md">Ages 13–18</p>
+                <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-none text-white drop-shadow-lg">Legally Blonde</h2>
+                <h3 class="font-serif text-3xl md:text-4xl italic text-hotpink mb-8 drop-shadow-md">JR.</h3>
+                
+                <div class="flex items-center gap-2 text-gray-200 mb-8 font-medium bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+                    <svg class="w-5 h-5 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Auditions: 8 Nov 2026</span>
+                </div>
+
+                <span class="btn-spring bg-hotpink text-white px-8 py-3 rounded-full font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(216,17,89,0.5)] border border-hotpink/50 group-hover:bg-white group-hover:text-hotpink transition-colors">
+                    View Audition Pack
+                </span>
+            </div>
+        </a>
+
+        <a href="/shrek/auditions/" class="group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block">
+            
+            <img src="../shrek/DSCF2029.JPG" alt="Shrek KIDS" class="absolute inset-0 w-full h-full object-cover bg-zoom opacity-60">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-charcoal/40 overlay-transition overlay-green z-10"></div>
+
+            <div class="relative z-20 text-center px-6 flex flex-col items-center transform transition-transform duration-500 group-hover:-translate-y-2">
+                <p class="text-shrekGreen font-bold tracking-[0.2em] text-sm uppercase mb-4 drop-shadow-md font-sans">Ages 7–12</p>
+                <h2 class="font-shrek text-6xl md:text-7xl lg:text-8xl mb-2 leading-none text-white tracking-wide drop-shadow-lg" style="text-shadow: 2px 2px 0 #111;">SHREK</h2>
+                <h3 class="font-shrek text-3xl md:text-4xl text-shrekGreen mb-8 tracking-widest drop-shadow-md">KIDS</h3>
+                
+                <div class="flex items-center gap-2 text-gray-200 mb-8 font-medium bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10 font-sans">
+                    <svg class="w-5 h-5 text-shrekGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Auditions: 22 Nov 2026</span>
+                </div>
+
+                <span class="btn-spring bg-shrekGreen text-charcoal px-8 py-3 rounded-full font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(166,196,0,0.4)] border border-shrekGreen/50 group-hover:bg-white group-hover:text-shrekDark transition-colors font-sans">
+                    View Audition Pack
+                </span>
+            </div>
+        </a>
+
+    </main>
+
+    <div class="hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-charcoal text-white rounded-full w-20 h-20 items-center justify-center border-4 border-[#111] shadow-2xl font-serif italic text-lg text-gray-400 pointer-events-none">
+        OR
+    </div>
+
+</body>
+</html>
