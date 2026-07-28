@@ -63,11 +63,11 @@
         }
         .split-panel:hover .overlay-pink,
         .split-panel.is-active .overlay-pink {
-            background-color: rgba(216, 17, 89, 0.4);
+            background-color: rgba(216, 17, 89, 0.5);
         }
         .split-panel:hover .overlay-green,
         .split-panel.is-active .overlay-green {
-            background-color: rgba(166, 196, 0, 0.4);
+            background-color: rgba(166, 196, 0, 0.5);
         }
 
         .content-shift {
@@ -127,72 +127,68 @@
 <body class="flex flex-col min-h-screen">
 
     <header class="fixed top-0 left-0 w-full z-50 glass-header py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="font-sans font-bold tracking-widest text-xs md:text-sm uppercase text-gray-300">
+        <div class="font-sans font-bold tracking-widest text-sm md:text-base uppercase text-gray-300">
             SDA Productions WA
         </div>
-        <div class="font-serif italic text-gray-400 text-xs md:text-sm">
+        <div class="font-serif italic text-gray-300 text-sm md:text-base">
             2027 Audition Season
         </div>
     </header>
 
-    <main class="flex-grow flex flex-col md:flex-row w-full md:h-screen pt-14 md:pt-0">
+    <main class="flex-grow flex flex-col md:flex-row w-full md:h-screen pt-[60px] md:pt-0">
 
-        <a href="/shrek/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[85vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0">
+        <a href="/shrek/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[90vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block border-b md:border-b-0 md:border-r border-white/10">
             
             <img src="../shrek/DSCF2029.JPG" alt="Shrek KIDS" class="absolute inset-0 w-full h-full object-cover bg-zoom opacity-60">
             
             <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent z-10"></div>
-            <div class="absolute inset-0 bg-charcoal/40 overlay-transition overlay-green z-10"></div>
+            <div class="absolute inset-0 bg-charcoal/50 overlay-transition overlay-green z-10"></div>
 
-            <div class="relative z-20 text-center px-6 flex flex-col items-center content-shift">
-                <p class="text-shrekGreen font-bold tracking-[0.2em] text-sm uppercase mb-4 drop-shadow-md font-nunito">Ages 7–12</p>
-                <h2 class="font-shrek text-6xl md:text-7xl lg:text-8xl mb-2 leading-none text-white tracking-wide shrek-title-shadow">SHREK</h2>
-                <h3 class="font-shrek text-3xl md:text-4xl text-shrekGreen mb-8 tracking-widest drop-shadow-md">KIDS</h3>
+            <div class="relative z-20 w-full max-w-2xl mx-auto text-center px-6 flex flex-col items-center justify-center content-shift">
+                <p class="text-shrekGreen font-bold tracking-[0.25em] text-lg md:text-xl lg:text-2xl uppercase mb-4 drop-shadow-md font-nunito">Ages 7–12</p>
+                <h2 class="font-shrek text-7xl md:text-8xl lg:text-9xl mb-2 leading-none text-white tracking-wide shrek-title-shadow">SHREK</h2>
+                <h3 class="font-shrek text-4xl md:text-5xl lg:text-6xl text-shrekGreen mb-10 tracking-widest drop-shadow-md">KIDS</h3>
                 
-                <div class="flex items-center gap-2 text-gray-200 mb-8 font-medium bg-black/50 px-5 py-2.5 rounded-full backdrop-blur-sm border border-white/10 font-nunito">
-                    <svg class="w-5 h-5 text-shrekGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <div class="flex items-center justify-center gap-3 text-gray-100 mb-10 font-bold text-lg md:text-xl bg-black/60 px-8 py-4 rounded-full backdrop-blur-md border-2 border-white/10 font-nunito w-max mx-auto shadow-lg">
+                    <svg class="w-6 h-6 text-shrekGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     <span>Auditions: 22 Nov 2026</span>
                 </div>
 
-                <span class="btn-shrek px-8 py-4 rounded-full font-bold text-sm tracking-wide border inline-block font-nunito">
+                <span class="btn-shrek px-10 py-5 rounded-full font-bold text-lg md:text-xl tracking-wide border-2 inline-block font-nunito">
                     View Audition Pack
                 </span>
             </div>
 
-            <div class="md:hidden absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center animate-subtle-bounce text-gray-400">
-                <span class="font-sans text-[10px] uppercase tracking-widest mb-1 font-bold">Scroll for More</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            <div class="md:hidden absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center animate-subtle-bounce text-gray-300">
+                <span class="font-sans text-xs uppercase tracking-widest mb-1 font-bold">Scroll for More</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
             </div>
         </a>
 
-        <a href="/legallyblonde/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[85vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block">
+        <a href="/legallyblonde/auditions/" class="split-panel relative w-full md:w-1/2 min-h-[90vh] md:min-h-0 md:h-full flex items-center justify-center overflow-hidden cursor-pointer block">
             
             <img src="../homeimages/HSMJR2026(19-07-2026)-20 (1).jpg" alt="Legally Blonde JR" class="absolute inset-0 w-full h-full object-cover bg-zoom opacity-60">
             
             <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent z-10"></div>
-            <div class="absolute inset-0 bg-charcoal/40 overlay-transition overlay-pink z-10"></div>
+            <div class="absolute inset-0 bg-charcoal/50 overlay-transition overlay-pink z-10"></div>
 
-            <div class="relative z-20 text-center px-6 flex flex-col items-center content-shift">
-                <p class="text-hotpink font-bold tracking-[0.2em] text-sm uppercase mb-3 drop-shadow-md">Ages 13–18</p>
-                <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-none text-white drop-shadow-lg">Legally Blonde</h2>
-                <h3 class="font-serif text-3xl md:text-4xl italic text-hotpink mb-8 drop-shadow-md">JR.</h3>
+            <div class="relative z-20 w-full max-w-2xl mx-auto text-center px-6 flex flex-col items-center justify-center content-shift">
+                <p class="text-hotpink font-bold tracking-[0.25em] text-lg md:text-xl lg:text-2xl uppercase mb-4 drop-shadow-md">Ages 13–18</p>
+                <h2 class="font-serif text-6xl md:text-7xl lg:text-8xl font-bold mb-2 leading-tight text-white drop-shadow-xl">Legally Blonde</h2>
+                <h3 class="font-serif text-4xl md:text-5xl lg:text-6xl italic text-hotpink mb-10 drop-shadow-md">JR.</h3>
                 
-                <div class="flex items-center gap-2 text-gray-200 mb-8 font-medium bg-black/50 px-5 py-2.5 rounded-full backdrop-blur-sm border border-white/10">
-                    <svg class="w-5 h-5 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <div class="flex items-center justify-center gap-3 text-gray-100 mb-10 font-bold text-lg md:text-xl bg-black/60 px-8 py-4 rounded-full backdrop-blur-md border-2 border-white/10 w-max mx-auto shadow-lg">
+                    <svg class="w-6 h-6 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     <span>Auditions: 8 Nov 2026</span>
                 </div>
 
-                <span class="btn-legally px-8 py-4 rounded-full font-bold text-sm tracking-wide border inline-block">
+                <span class="btn-legally px-10 py-5 rounded-full font-bold text-lg md:text-xl tracking-wide border-2 inline-block">
                     View Audition Pack
                 </span>
             </div>
         </a>
 
     </main>
-
-    <div class="hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-charcoal text-white rounded-full w-20 h-20 items-center justify-center border-4 border-[#111] shadow-2xl font-serif italic text-lg text-gray-400 pointer-events-none">
-        OR
-    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
