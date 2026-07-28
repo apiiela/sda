@@ -1,16 +1,3 @@
-Here is the completely restyled version.
-
-To immediately fix the "Apple/Law Firm" feel and bring it into the swamp, I have completely overhauled the typography and styling while maintaining the premium, high-end "Broadway/Disney Theatrical" code structure.
-
-**Key Changes:**
-
-* **Typography:** Swapped the corporate fonts for **Luckiest Guy** (which perfectly mimics the iconic chunky, fun Shrek movie poster font) and **Nunito** (a premium, soft, rounded sans-serif that feels animated and friendly).
-* **Theming:** Added custom text-shadows, bolder tracking on the headings, and tweaked the color palette to include earthy swamp tones alongside the vibrant Ogre Green.
-* **Buttons & Elements:** Thickened the borders and rounded the elements slightly more to give it that bouncy, animated DreamWorks feel without looking like a cheap template.
-
-Save this entirely as your `index.html`:
-
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -286,36 +273,27 @@ Save this entirely as your `index.html`:
         </div>
     </section>
 
-    <section class="py-24 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row items-center gap-16 mb-20">
-                <div class="w-full lg:w-1/2 reveal-left">
-                    <h2 class="font-shrek text-4xl md:text-5xl mb-6 text-shrekGreen tracking-wide">Musical Synopsis</h2>
-                    <p class="text-charcoal font-medium text-lg leading-relaxed mb-4">
-                        Beauty is in the eye of the ogre in Shrek The Musical KIDS, based on the Oscar-winning DreamWorks Animation film and fantastic Broadway musical. It's a "big bright beautiful world" as everyone's favorite ogre, Shrek, leads a cast of fairytale misfits on an adventure to rescue a princess and find true acceptance.
-                    </p>
-                    <p class="text-charcoal font-medium text-lg leading-relaxed">
-                        Once upon a time, in a far away swamp, there lived an ogre named Shrek. One day, Shrek finds his swamp invaded by banished fairytale misfits who have been cast off by Lord Farquaad, a tiny terror with big ambitions.
-                    </p>
-                </div>
-                <div class="w-full lg:w-1/2 reveal-right rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-shrekGreen/20 relative min-h-[300px] md:min-h-[400px]">
-                     <img src="../../homeimages/HSMJR2026(19-07-2026)-15 (1).jpg" alt="Production Photo" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out">
-                </div>
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-shrek text-4xl md:text-5xl mb-4 text-shrekGreen tracking-wide">Musical Synopsis</h2>
+                <div class="w-20 h-2 bg-shrekGreen mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-                <div class="w-full lg:w-1/2 reveal-right">
-                    <p class="text-charcoal font-medium text-lg leading-relaxed mb-4">
-                        When Shrek sets off with a wisecracking donkey to confront Farquaad, he's handed a task - if he rescues feisty princess Fiona, his swamp will be righted. Shrek tries to win Fiona's love and vanquish Lord Farquaad, but a fairytale wouldn't be complete without a few twists and turns along the way.
+            <div class="glass-panel bg-white p-10 md:p-16 rounded-[2.5rem] reveal-up shadow-xl border-2 border-gray-100 text-left space-y-6">
+                <p class="text-charcoal font-medium text-lg leading-relaxed">
+                    Beauty is in the eye of the ogre in Shrek The Musical KIDS, based on the Oscar-winning DreamWorks Animation film and fantastic Broadway musical. It's a "big bright beautiful world" as everyone's favorite ogre, Shrek, leads a cast of fairytale misfits on an adventure to rescue a princess and find true acceptance.
+                </p>
+                <p class="text-charcoal font-medium text-lg leading-relaxed">
+                    Once upon a time, in a far away swamp, there lived an ogre named Shrek. One day, Shrek finds his swamp invaded by banished fairytale misfits who have been cast off by Lord Farquaad, a tiny terror with big ambitions.
+                </p>
+                <p class="text-charcoal font-medium text-lg leading-relaxed">
+                    When Shrek sets off with a wisecracking donkey to confront Farquaad, he's handed a task - if he rescues feisty princess Fiona, his swamp will be righted. Shrek tries to win Fiona's love and vanquish Lord Farquaad, but a fairytale wouldn't be complete without a few twists and turns along the way.
+                </p>
+                <div class="p-8 mt-8 bg-shrekGreen/10 border-2 border-shrekGreen/30 rounded-2xl">
+                    <p class="text-shrekDark font-bold leading-relaxed text-xl text-center">
+                        Part romance and part twisted fairy tale, Shrek KIDS is an irreverently fun show with a powerful message for the whole family. With abundant opportunities for imaginative sets and costumes, and a host of over-the-top roles, there's a part for everyone in this dazzling adventure story!
                     </p>
-                    <div class="p-6 bg-shrekGreen/10 border-2 border-shrekGreen/30 rounded-2xl">
-                        <p class="text-shrekDark font-bold leading-relaxed text-lg">
-                            Part romance and part twisted fairy tale, Shrek KIDS is an irreverently fun show with a powerful message for the whole family. With abundant opportunities for imaginative sets and costumes, and a host of over-the-top roles, there's a part for everyone in this dazzling adventure story!
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 reveal-left rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-shrekGreen/20 relative min-h-[300px] md:min-h-[400px]">
-                    <img src="../../homeimages/HSMJR2026(19-07-2026)-41 (1).jpg" alt="Production Photo" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out">
                 </div>
             </div>
         </div>
@@ -772,5 +750,3 @@ Save this entirely as your `index.html`:
     </script>
 </body>
 </html>
-
-```
