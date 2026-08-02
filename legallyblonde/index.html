@@ -1,89 +1,747 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Legally Blonde JR | Auditions | SDA Productions WA</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-.btn { transition: .3s ease; }
-.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 25px #ff149377; }
-</style>
-</head>
-
-<body class="text-slate-200 min-h-screen flex flex-col bg-black overflow-x-hidden">
-
-<div class="fixed inset-0 z-0 w-full h-full">
-    <img src="../homeimages/HSMJR2026(19-07-2026)-20 (1).jpg" 
-        alt="SDA Productions WA Production Background"
-        class="w-full h-full object-cover fixed opacity-40">
-    <div class="absolute inset-0 bg-black/60 z-10"></div>
-</div>
-
-<header class="w-full z-40 bg-black/50 backdrop-blur-sm fixed top-0 border-b border-pink-900/30">
-<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-<a href="https://www.sdaproductionswa.com.au/" class="font-bold text-white text-xl hover:text-pink-400 transition-colors">← Back to Main Site</a>
-</nav>
-</header>
-
-<main class="flex-grow flex items-center justify-center relative px-6 z-20 pt-28 pb-12">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legally Blonde JR | Auditions</title>
     
-    <div class="relative w-full max-w-2xl bg-slate-950/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-pink-900/30 overflow-hidden">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hotpink: '#D81159',
+                        softpink: '#FFB3C6',
+                        cream: '#FDFBF7',
+                        charcoal: '#111111',
+                        lightglass: 'rgba(255, 255, 255, 0.85)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #111111;
+        }
         
-        <div class="relative z-10">
-            <h1 class="text-6xl font-extrabold mb-2 pb-2 leading-tight tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-pink-200 to-pink-500 drop-shadow-md">Legally Blonde JR.</h1>
-            
-            <h2 class="text-3xl text-pink-300 font-semibold mb-8 tracking-tight">Auditions Coming Soon</h2>
-            
-            <p class="text-lg text-slate-300 mb-10 max-w-md mx-auto">
-                Join our mailing list to receive the official audition pack, character breakdowns, and registration details the moment they are released.
-            </p>
+        .glass-panel {
+            background: var(--tw-colors-lightglass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+        }
 
-            <form id="mailing-list-form" action="https://script.google.com/macros/s/AKfycbweXaBJQQK-4Ym2Wmi7KKKjIYCYrZsXHpgp43VrVskV4LLL_YCzEZfC2bEMUMkbP6Dh6Q/exec" method="POST" class="max-w-md mx-auto relative z-30">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" name="email" required placeholder="Enter your email address..." 
-                        class="flex-grow px-5 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-colors shadow-inner">
-                    
-                    <button type="submit" class="btn bg-pink-600 px-8 py-4 rounded-xl font-bold text-white shadow-lg whitespace-nowrap text-lg">
-                        Register Interest
-                    </button>
+        .glass-nav {
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Animations */
+        .reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        .reveal-up.active, .reveal-left.active, .reveal-right.active {
+            opacity: 1; transform: translate(0);
+        }
+
+        /* Spring Button */
+        .btn-spring {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .btn-spring:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 30px -10px rgba(216, 17, 89, 0.4);
+        }
+
+        /* Hover lift */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modal */
+        .modal {
+            opacity: 0; visibility: hidden; transition: all 0.4s ease;
+        }
+        .modal.active {
+            opacity: 1; visibility: visible;
+        }
+        .modal-content {
+            transform: scale(0.95) translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #D81159, #FFB3C6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* FAQ Accordion Fix */
+        .faq-content {
+            max-height: 0px;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;
+        }
+        .faq-item.faq-open .faq-content {
+            opacity: 1;
+        }
+        .faq-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .faq-item.faq-open .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-hotpink selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 glass-nav py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif font-bold text-2xl tracking-wider text-charcoal">LB<span class="text-hotpink">.</span></a>
+            <div class="hidden lg:flex space-x-6 text-sm font-semibold tracking-wide text-gray-700">
+                <a href="#overview" class="hover:text-hotpink transition-colors">Overview</a>
+                <a href="#process" class="hover:text-hotpink transition-colors">Auditions</a>
+                <a href="#characters" class="hover:text-hotpink transition-colors">Characters</a>
+                <a href="#rehearsals" class="hover:text-hotpink transition-colors">Rehearsals</a>
+                <a href="#faq" class="hover:text-hotpink transition-colors">FAQ</a>
+                <a href="#register" class="text-hotpink hover:text-charcoal transition-colors">Register</a>
+            </div>
+            <a href="#register" class="btn-spring bg-charcoal text-cream px-6 py-2 rounded-full text-sm font-bold hover:bg-black shadow-md">Book Audition</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../../homeimages/HSMJR2026(19-07-2026)-20 (1).jpg" alt="Audition Background" class="w-full h-full object-cover opacity-80">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-white/40 to-[#FDFBF7] z-10"></div>
+        </div>
+
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
+            <div class="inline-block glass-panel bg-white/70 px-8 py-10 rounded-3xl shadow-xl">
+                <p class="text-hotpink tracking-[0.2em] text-sm md:text-base uppercase mb-4 font-bold reveal-up">Sing! Dance! Act!</p>
+                <h1 class="font-serif text-6xl md:text-8xl font-bold mb-4 leading-tight text-charcoal reveal-up" style="transition-delay: 100ms;">
+                    LEGALLY BLONDE <span class="text-3xl md:text-5xl align-top text-hotpink">JR.</span>
+                </h1>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10 text-charcoal font-bold reveal-up" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-6 h-6 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span class="text-lg">Audition Date: 8 Nov 2026</span>
+                    </div>
+                    <div class="hidden md:block w-1.5 h-1.5 bg-hotpink rounded-full"></div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-6 h-6 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <span class="text-lg">Ages 13–18</span>
+                    </div>
                 </div>
-                <p class="text-xs text-slate-500 mt-4 text-left px-2">We respect your privacy. Audition updates only.</p>
-            </form>
 
-            <div id="success-message" class="hidden text-pink-300 font-bold text-2xl py-8 tracking-tight">
-                Success.<br>
-                <span class="text-pink-100 text-lg font-medium mt-2 block">You have been added to the mailing list. Keep an eye on your inbox.</span>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 reveal-up" style="transition-delay: 300ms;">
+                    <a href="#register" class="btn-spring bg-hotpink text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_10px_20px_-10px_rgba(216,17,89,0.6)] text-center border-2 border-hotpink">Book Audition Time</a>
+                    <a href="https://www.dropbox.com/scl/fo/igruxizcs9krn6ufblbdm/AEpgLGpdoOVAediKhTc05Io?rlkey=cpcwq2viov6cvenrm77qbw2vy&st=7xm3s19p&dl=0" target="_blank" rel="noopener noreferrer" class="btn-spring bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 text-center border-2 border-gray-200 shadow-sm">Download Audition Material</a>
+                </div>
             </div>
         </div>
 
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-hotpink bg-white/80 p-2 rounded-full shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <section id="overview" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">Audition Overview</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl hover-lift reveal-up bg-white">
+                    <h3 class="text-charcoal font-bold text-2xl mb-3">Dates & Booking</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">Auditions will be held on the 8th of November 2026. Your timeslot can be secured in the <a href="#register" class="text-hotpink hover:text-charcoal transition-colors underline font-bold">Booking Section</a> below.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl hover-lift reveal-up bg-white" style="transition-delay: 100ms;">
+                    <h3 class="text-charcoal font-bold text-2xl mb-3">Callbacks</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">Held on the 15th of November 2026 for those invited. Call-backs are for lead and supporting roles only.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl hover-lift reveal-up bg-white" style="transition-delay: 200ms;">
+                    <h3 class="text-charcoal font-bold text-2xl mb-3">Venue</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">Sing Dance Act WA: Unit 17/30 Ainsbury Parade Clarkson 6030.</p>
+                </div>
+                
+                <div class="glass-panel p-8 rounded-2xl hover-lift reveal-up lg:col-span-2 bg-white">
+                    <h3 class="text-charcoal font-bold text-2xl mb-3">Format</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">Auditions consist of a group choreography session, a group vocal call, and individual vocal calls for those auditioning for lead/supporting roles. Everyone must learn the ensemble track alongside excerpts for any lead/supporting character.</p>
+                </div>
+
+                 <div class="glass-panel p-8 rounded-2xl hover-lift reveal-up bg-white">
+                    <h3 class="text-charcoal font-bold text-2xl mb-3">Acting Call</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">There will be no acting call for mainround auditions; dialogue pages will be sent out to those invited to call-backs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 px-6 bg-white border-y border-gray-200">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">The Process</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-4 border-pink-100 ml-4 md:ml-1/2">
+                
+                <div class="mb-12 ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-white border-4 border-hotpink w-6 h-6 rounded-full mt-1.5 shadow-md"></div>
+                    <h3 class="text-2xl font-serif text-charcoal font-bold mb-2">Book Slot</h3>
+                    <p class="text-gray-700 font-medium">Complete the guardian form and secure your time via TryBooking.</p>
+                </div>
+
+                <div class="mb-12 ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-white border-4 border-hotpink w-6 h-6 rounded-full mt-1.5 shadow-md"></div>
+                    <h3 class="text-2xl font-serif text-charcoal font-bold mb-2">Audition</h3>
+                    <p class="text-gray-700 font-medium">November 8th, 2026. Group choreo and vocal calls.</p>
+                </div>
+
+                <div class="mb-12 ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-white border-4 border-hotpink w-6 h-6 rounded-full mt-1.5 shadow-md"></div>
+                    <h3 class="text-2xl font-serif text-charcoal font-bold mb-2">Callbacks</h3>
+                    <p class="text-gray-700 font-medium">November 15th, 2026. For lead and supporting roles only.</p>
+                </div>
+
+                <div class="mb-12 ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-white border-4 border-hotpink w-6 h-6 rounded-full mt-1.5 shadow-md"></div>
+                    <h3 class="text-2xl font-serif text-charcoal font-bold mb-2">Casting</h3>
+                    <p class="text-gray-700 font-medium">If you do not receive a call-back, this does not mean you have not been cast.</p>
+                </div>
+
+                <div class="mb-12 ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-white border-4 border-hotpink w-6 h-6 rounded-full mt-1.5 shadow-md"></div>
+                    <h3 class="text-2xl font-serif text-charcoal font-bold mb-2">Rehearsals</h3>
+                    <p class="text-gray-700 font-medium">Commencing and running through January 2026.</p>
+                </div>
+
+                <div class="ml-10 relative reveal-left">
+                    <div class="absolute -left-[48px] bg-hotpink shadow-[0_0_15px_rgba(216,17,89,0.5)] border-4 border-hotpink w-6 h-6 rounded-full mt-1.5"></div>
+                    <h3 class="text-2xl font-serif text-hotpink font-bold mb-2">Shows</h3>
+                    <p class="text-gray-700 font-medium">30th and 31st of January.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-16 mb-20">
+                <div class="w-full lg:w-1/2 reveal-left">
+                    <h2 class="font-serif text-4xl font-bold mb-6 text-gradient">Musical Synopsis</h2>
+                    <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+                        The world turns on its head for Sorority president Elle Woods when her long-term boyfriend, Warner, dumps her with plans on moving from UCLA to Harvard to study law. He tells Elle he needs someone serious, and leaves her in the dust.
+                    </p>
+                    <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                        Determined to get the love of her life back, Elle works to get into Harvard Law herself, resolved on proving to Warner she can be exactly who he needs her to be.
+                    </p>
+                </div>
+                <div class="w-full lg:w-1/2 reveal-right rounded-3xl overflow-hidden shadow-xl border border-gray-200 relative min-h-[300px] md:min-h-[400px]">
+                     <img src="../../homeimages/HSMJR2026(19-07-2026)-15 (1).jpg" alt="Production Photo" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out">
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                <div class="w-full lg:w-1/2 reveal-right">
+                    <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+                        Once in Boston, Elle faces roadblocks she has never had to face before - she learns quickly that no-one seems to take her seriously thanks to her bright persona and bubbly personality.
+                    </p>
+                    <p class="text-gray-700 font-medium text-lg leading-relaxed mb-6">
+                        With the encouragement of her new-found friend and owner of the local salon, Paulette, and the support of Harvard graduate Emmett, Elle works harder than ever to prove to everyone - not just Warner - that she belongs at Harvard just as much as every other student.
+                    </p>
+                    <div class="p-6 bg-hotpink/5 border-2 border-hotpink/30 rounded-xl">
+                        <p class="text-hotpink font-bold leading-relaxed text-lg">
+                            Full of astounding dance numbers and songs you'll be singing the whole way home. Legally Blonde is a story about self-worth, independence, and believing in yourself and your own abilities to do whatever you set your mind to.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 reveal-left rounded-3xl overflow-hidden shadow-xl border border-gray-200 relative min-h-[300px] md:min-h-[400px]">
+                    <img src="../../homeimages/HSMJR2026(19-07-2026)-41 (1).jpg" alt="Production Photo" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" class="py-24 px-6 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">Characters</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 font-medium max-w-2xl mx-auto">Click on a character to view their breakdown and vocal requirements.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Elle Woods" data-range="F#2/Gb2 - G5" 
+                    data-desc="Elle appears like a typical blonde California sorority girl, majoring in fashion merchandising and standing president of her sorority Delta Nu. She is hardworking, optimistic and tenacious." 
+                    data-req="Must be comfortable performing in character heels.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Elle Woods</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Lead</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Emmett Forrest" data-range="B2-A4" 
+                    data-desc="Emmett has had to work hard his entire life to get into Harvard Law School and nothing is going to come between him and becoming a partner in a law firm someday. He is determined not to let Elle waste the incredible opportunity she's been given.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Emmett Forrest</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Lead</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Warner Huntington III" data-range="D#3/Eb3 - G#4/Ab4" 
+                    data-desc="Elle's ex boyfriend who dumps her with the intention of moving forward with his life at Harvard Law as someone to be taken much more seriously. Warner is driven by his own self-motivation to be as good as his older brother a Yale Law graduate.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Warner Huntington III</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Lead</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Paulette Bonafonte" data-range="A3-A5" 
+                    data-desc="The brash yet caring hairdresser at the Hair Affair who becomes quick friends with Elle when she moves to Boston. Paulette's honest and audacious personality makes her a fun and comical character on stage.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Paulette Bonafonte</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Supporting</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Vivienne Kensington" data-range="A3-F5" 
+                    data-desc="Warner's highschool girlfriend who he re-kindles with when starting his new life at Harvard. Dry, quick-witted and wickedly smart. Vivienne dismisses Elle immediately due to her bright and bubbly exterior.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Vivienne Kensington</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Supporting</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Professor Callahan" data-range="Does not sing solo" 
+                    data-desc="The stern and rather pompous professor of criminal law at Harvard Law School. Like her classmates, Callahan dismisses Elle due to her attitude early on, but eventually invites her on as an intern on his latest murder trial.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Professor Callahan</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Supporting</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Brooke Wyndham" data-range="A3-G5" 
+                    data-desc="Former sorority sister of Delta Nu and worldwide fitness influencer, who has been accused on murdering her twice-her-age husband and hires Callahan as her lawyer. Brooke has an alibi that could save her from a lifetime of prison, but sharing her story could ruin everything she has built for herself.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Brooke Wyndham</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Supporting</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Pilar, Margot & Serena" data-range="F#3/Gb3 - C#5/Db5" 
+                    data-desc="Elle's closest friends in her Sorority Delta Nu - perform as a trio and lead the Delta Nu ensemble. The girls are bold, flashy and utterly without shame and support Elle in her endeavours to move across the country.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Pilar, Margot & Serena</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Supporting Trio</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Kiki & The Salon Workers" data-range="D4-A4" 
+                    data-desc="Paulette's co-workers at the Hair Affair. Brash and bubbly as Paulette herself, but with more confidence. Kiki leads the ensemble in performing Bend and Snap.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Kiki & Salon Workers</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Featured Ensemble</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Main Ensemble" data-range="All Ranges" 
+                    data-desc="Will consist of Harvard students and staff, members of the court, etc. Minor roles to be cast include Kyle the mailman, Chutney Wyndham. Expected to learn all group songs (even if they are not on stage for the number).">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Main Ensemble</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Ensemble</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+
+                <button class="char-card glass-panel bg-white p-6 rounded-2xl hover-lift text-left reveal-up border border-gray-200 shadow-sm flex flex-col h-full w-full" 
+                    data-name="Featured Dancers" data-range="All Ranges" 
+                    data-desc="An Ensemble made up of very strong Dancers. One or Two dancers will also be considered for the Dance Captain position. Expected to learn all group songs.">
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Featured Dancers</h3>
+                    <p class="text-sm font-bold text-hotpink mb-4">Ensemble</p>
+                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-auto block">View Details &rarr;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="characterModal" class="modal fixed inset-0 z-[100] flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm modal-bg cursor-pointer"></div>
+        <div class="modal-content relative bg-white border border-gray-200 rounded-3xl p-8 max-w-2xl w-full shadow-2xl z-10">
+            <button class="close-modal absolute top-6 right-6 text-gray-400 hover:text-charcoal transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h3 id="modalName" class="font-serif text-3xl font-bold text-charcoal mb-2">Character Name</h3>
+            <div class="inline-block px-4 py-1 bg-hotpink/10 text-hotpink rounded-full text-sm font-bold mb-6">
+                Vocal Range: <span id="modalRange"></span>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Description</h4>
+                    <p id="modalDesc" class="text-gray-700 font-medium leading-relaxed"></p>
+                </div>
+                <div id="reqContainer" class="hidden">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Requirements</h4>
+                    <p id="modalReq" class="text-charcoal font-semibold leading-relaxed p-4 bg-gray-50 rounded-xl border border-gray-200"></p>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
 
-<script>
-    const form = document.getElementById('mailing-list-form');
-    const successMessage = document.getElementById('success-message');
+    <section id="rehearsals" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">Rehearsals</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-700 font-medium max-w-2xl mx-auto">Rehearsals will run through January 2026. If you have unavoidable conflict, please make it clear when registering.</p>
+                <p class="text-gray-700 mt-2 font-semibold">All rehearsals at Sing Dance Act WA: Unit 17/30 Ainsbury Parade Clarkson 6030. Wear comfortable clothing for movement.</p>
+            </div>
 
-    form.addEventListener('submit', e => {
-        e.preventDefault(); 
-        
-        const btn = form.querySelector('button');
-        btn.innerHTML = 'Sending...';
-        btn.classList.add('opacity-75', 'cursor-not-allowed');
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-12">
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Friday 1 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Monday 4 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Wed 6 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Friday 8 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Monday 11 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Wed 13 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Friday 15 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Monday 18 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Wed 20 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink reveal-up shadow-sm"><p class="font-bold text-charcoal">Friday 22 January</p><p class="text-sm font-semibold text-gray-500">9:00 AM – 3:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink/60 reveal-up shadow-sm"><p class="font-bold text-charcoal">Monday 25 January</p><p class="text-sm text-hotpink font-bold">9:00 AM – 5:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink/60 reveal-up shadow-sm"><p class="font-bold text-charcoal">Wed 27 January</p><p class="text-sm text-hotpink font-bold">9:00 AM – 5:00 PM</p></div>
+                <div class="glass-panel bg-white p-5 rounded-xl border-l-4 border-l-hotpink/60 reveal-up shadow-sm"><p class="font-bold text-charcoal">Friday 29 January</p><p class="text-sm text-hotpink font-bold">9:00 AM – 5:00 PM</p></div>
+            </div>
 
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-        }).then(response => {
-            form.style.display = 'none';
-            successMessage.classList.remove('hidden');
-        }).catch(error => {
-            console.error('Error!', error.message);
-            btn.innerHTML = 'Error - Try Again';
-            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            <div class="bg-gradient-to-r from-hotpink/10 to-pink-100 border-2 border-hotpink/20 rounded-3xl p-10 text-center hover-lift reveal-up max-w-4xl mx-auto shadow-sm">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-charcoal mb-2">Performance Weekend</h3>
+                <p class="text-xl text-hotpink font-bold">30th and 31st of January</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <div class="glass-panel bg-white p-10 rounded-[2.5rem] reveal-left flex flex-col justify-center border-2 border-gray-100 shadow-sm">
+                <h2 class="font-serif text-3xl font-bold mb-6 text-charcoal">Participation Fee</h2>
+                <div class="text-6xl font-bold text-gradient mb-6">$400</div>
+                <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                    Helps cover the cost of materials, costumes, and other production expenses such as theatre hire and technical services. Price includes a free cast member T-shirt.
+                </p>
+            </div>
+
+            <div class="reveal-right">
+                <h2 class="font-serif text-3xl font-bold mb-8 text-charcoal">What To Bring</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border-2 border-gray-100 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-2xl">💧</div>
+                        <span class="font-bold text-lg text-charcoal">Water</span>
+                    </div>
+                    <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border-2 border-gray-100 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-2xl">👟</div>
+                        <span class="font-bold text-lg text-charcoal">Jazz Shoes / Sneakers</span>
+                    </div>
+                    <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border-2 border-gray-100 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-2xl">📝</div>
+                        <span class="font-bold text-lg text-charcoal leading-tight">Media Consent & Participation Waiver</span>
+                    </div>
+                    <div class="glass-panel bg-white p-6 rounded-2xl hover-lift flex items-center gap-4 border-2 border-gray-100 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-hotpink/10 flex items-center justify-center text-hotpink text-2xl">📄</div>
+                        <span class="font-bold text-lg text-charcoal">Performance CV <span class="text-xs text-gray-500 block font-semibold">(Recommended)</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 relative z-10">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">Frequently Asked Questions</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                
+                <div class="faq-item glass-panel bg-white rounded-2xl reveal-up border-2 border-gray-100 shadow-sm">
+                    <button class="faq-btn w-full flex justify-between items-center font-bold cursor-pointer p-6 text-lg text-left text-charcoal focus:outline-none hover:text-hotpink transition-colors">
+                        <span>Why do I need a guardian form?</span>
+                        <span class="faq-icon text-hotpink">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-700 font-medium text-lg leading-relaxed border-t-2 border-gray-50 mx-6">
+                            This form is essential for ensuring that we have all necessary contact and medical information for each cast member. Your prompt attention helps us ensure a smooth rehearsal process.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel bg-white rounded-2xl reveal-up border-2 border-gray-100 shadow-sm" style="transition-delay: 100ms;">
+                    <button class="faq-btn w-full flex justify-between items-center font-bold cursor-pointer p-6 text-lg text-left text-charcoal focus:outline-none hover:text-hotpink transition-colors">
+                        <span>What should I wear to rehearsals?</span>
+                        <span class="faq-icon text-hotpink">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-700 font-medium text-lg leading-relaxed border-t-2 border-gray-50 mx-6">
+                            Please wear clothing that is comfortable and allows for easy movement (e.g. active wear or theatre blacks) to ensure comfort and ease of movement when learning choreography.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel bg-white rounded-2xl reveal-up border-2 border-gray-100 shadow-sm" style="transition-delay: 200ms;">
+                    <button class="faq-btn w-full flex justify-between items-center font-bold cursor-pointer p-6 text-lg text-left text-charcoal focus:outline-none hover:text-hotpink transition-colors">
+                        <span>Do I have to learn the ensemble track?</span>
+                        <span class="faq-icon text-hotpink">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-700 font-medium text-lg leading-relaxed border-t-2 border-gray-50 mx-6">
+                            Yes. Everyone must learn the ensemble track alongside the excerpts for any lead/supporting character you plan to audition for.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel bg-white rounded-2xl reveal-up border-2 border-gray-100 shadow-sm" style="transition-delay: 300ms;">
+                    <button class="faq-btn w-full flex justify-between items-center font-bold cursor-pointer p-6 text-lg text-left text-charcoal focus:outline-none hover:text-hotpink transition-colors">
+                        <span>What if I don't get a callback?</span>
+                        <span class="faq-icon text-hotpink">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-700 font-medium text-lg leading-relaxed border-t-2 border-gray-50 mx-6">
+                            If you do not receive a call-back, this does not mean you have not been cast in the production. Call-backs are for lead and supporting roles only.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white border-y-2 border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-charcoal">Creative Team</h2>
+                <div class="w-16 h-1 bg-hotpink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 text-center">
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Producer</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Hayley Green</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 50ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Creative Director</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Izzi Green</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 100ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Director</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Billy Hewett</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 150ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Associate Director</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Millie Cullender</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 200ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Music Director</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Catherine Haydon</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 250ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Choreographer</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Tayla Edwards</h3>
+                </div>
+                <div class="glass-panel bg-gray-50 p-6 rounded-2xl hover-lift reveal-up border-2 border-gray-100 shadow-sm w-48" style="transition-delay: 300ms;">
+                    <p class="text-hotpink text-sm uppercase tracking-wide font-bold mb-2">Asst. Choreographer</p>
+                    <h3 class="font-serif text-xl font-bold text-charcoal">Emma Beaman</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-24 px-6 relative z-10 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto glass-panel bg-white p-10 md:p-12 rounded-[2.5rem] text-center border-4 border-hotpink/20 reveal-up shadow-2xl">
+            
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-charcoal">Join The Cast</h2>
+            <p class="text-gray-600 font-medium mb-12 text-lg max-w-2xl mx-auto">Follow the three steps below to prepare your material, get your waiver ready, and secure your audition timeslot.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <div class="hidden md:block absolute left-1/3 top-8 bottom-8 w-1 rounded-full bg-gray-100 -translate-x-1/2"></div>
+                <div class="hidden md:block absolute left-2/3 top-8 bottom-8 w-1 rounded-full bg-gray-100 -translate-x-1/2"></div>
+
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-14 h-14 rounded-full bg-hotpink text-white flex items-center justify-center font-bold text-2xl mb-6 shadow-md border-4 border-white">1</div>
+                    <h3 class="text-2xl font-serif font-bold mb-3 text-charcoal">Mandatory Forms</h3>
+                    <p class="text-gray-600 mb-6 font-medium text-sm leading-relaxed">Both forms below must be completed. The waiver MUST be printed and brought with you. You cannot audition without them.</p>
+                    <div class="flex flex-col gap-3 w-full mt-auto">
+                        <a href="../../Sda%20Productions%20Wa%20%E2%80%93%20Media%20Consent%20&%20Participation%20Waiver.pdf" target="_blank" class="btn-spring bg-white text-charcoal px-6 py-3 rounded-2xl font-bold shadow-sm border-2 border-hotpink hover:bg-hotpink/5 transition w-full inline-flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 text-hotpink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download Waiver
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHVHlRFJQXMYwdQTqqDsfuJPwb9QL4sdUgB8TQqY_nMw6qTg/viewform" target="_blank" rel="noopener noreferrer" class="btn-spring bg-white text-charcoal px-6 py-3 rounded-2xl font-bold shadow-sm border-2 border-gray-300 hover:bg-gray-50 transition w-full inline-flex items-center justify-center gap-2 text-sm">
+                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Parent/Guardian Form
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-14 h-14 rounded-full bg-charcoal text-white flex items-center justify-center font-bold text-2xl mb-6 shadow-md border-4 border-white">2</div>
+                    <h3 class="text-2xl font-serif font-bold mb-3 text-charcoal">Secure Your Slot</h3>
+                    <p class="text-gray-600 mb-8 font-medium">Once you have your forms ready, proceed to TryBooking to lock in your preferred audition time.</p>
+                    <a href="https://www.trybooking.com/DOFMF" target="_blank" rel="noopener noreferrer" class="btn-spring bg-hotpink px-6 py-4 rounded-2xl font-bold text-white shadow-[0_8px_0_#A00C42] border-2 border-hotpink w-full inline-flex items-center justify-center gap-2 mt-auto hover:translate-y-1 hover:shadow-[0_4px_0_#A00C42] active:translate-y-2 active:shadow-none transition-all">
+                        Book on TryBooking
+                    </a>
+                </div>
+
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-14 h-14 rounded-full bg-pink-300 text-charcoal flex items-center justify-center font-bold text-2xl mb-6 shadow-md border-4 border-white">3</div>
+                    <h3 class="text-2xl font-serif font-bold mb-3 text-charcoal">Prepare Material</h3>
+                    <p class="text-gray-600 mb-8 font-medium">Download the audition material. Learn the ensemble track plus the specific excerpts for your desired roles.</p>
+                    <a href="https://www.dropbox.com/scl/fo/igruxizcs9krn6ufblbdm/AEpgLGpdoOVAediKhTc05Io?rlkey=cpcwq2viov6cvenrm77qbw2vy&st=7xm3s19p&dl=0" target="_blank" rel="noopener noreferrer" class="btn-spring bg-white text-charcoal px-6 py-4 rounded-2xl font-bold shadow-sm border-2 border-gray-300 hover:bg-gray-50 transition w-full inline-flex items-center justify-center gap-2 mt-auto">
+                        Get Audition Material
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-300 py-12 text-center bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="#" class="font-serif font-bold text-2xl tracking-wider text-charcoal mb-6 inline-block">LB<span class="text-hotpink">.</span></a>
+            <p class="text-gray-500 font-medium text-sm">Sing Dance Act WA &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+            observer.observe(el);
         });
-    });
-</script>
 
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentItem = button.closest('.faq-item');
+                const content = currentItem.querySelector('.faq-content');
+                const isOpen = currentItem.classList.contains('faq-open');
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('faq-open');
+                    item.querySelector('.faq-content').style.maxHeight = '0px';
+                });
+
+                if (!isOpen) {
+                    currentItem.classList.add('faq-open');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        const modal = document.getElementById('characterModal');
+        const modalBg = modal.querySelector('.modal-bg');
+        const closeBtn = modal.querySelector('.close-modal');
+        
+        const mName = document.getElementById('modalName');
+        const mRange = document.getElementById('modalRange');
+        const mDesc = document.getElementById('modalDesc');
+        const mReq = document.getElementById('modalReq');
+        const reqContainer = document.getElementById('reqContainer');
+
+        document.querySelectorAll('.char-card').forEach(card => {
+            card.addEventListener('click', () => {
+                mName.textContent = card.dataset.name;
+                mRange.textContent = card.dataset.range;
+                mDesc.textContent = card.dataset.desc;
+                
+                if (card.dataset.req) {
+                    mReq.textContent = card.dataset.req;
+                    reqContainer.classList.remove('hidden');
+                } else {
+                    reqContainer.classList.add('hidden');
+                }
+                
+                modal.classList.add('active');
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modalBg.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
