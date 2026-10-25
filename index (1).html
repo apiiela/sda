@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SDA Productions WA</title>
+<meta name="description" content="SDA Productions WA is a youth theatre group in Western Australia, bringing productions like Legally Blonde JR and Shrek Kids to the stage.">
+<meta name="keywords" content="theatre groups, youth theatre, Legally Blonde JR, Shrek Kids, SDA Productions WA, Western Australia, Perth, Clarkson, local talent">
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preload" as="image" href="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--hot:linear-gradient(90deg,#ff2d87,#ff6a3d 60%,#ffb020)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:3.5rem}
+body{background:#000;color:#f5f5f7;font:400 1.0625rem/1.5 "SF Pro Display",-apple-system,BlinkMacSystemFont,Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid #ff6a3d;outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-weight:700;letter-spacing:-.04em;line-height:1.04;text-wrap:balance}
+.c{width:min(1080px,100% - 3rem);margin-inline:auto}
+
+/* Frosted nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(0,0,0,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:3.25rem;font-size:.875rem}
+.b{font-weight:600;font-size:1rem}
+nav a:not(.b){color:#d2d2d7;margin-left:1.6rem;transition:color .2s}
+nav a:not(.b):hover{color:#fff}
+
+/* Pills */
+.pill{display:inline-block;padding:.8rem 1.6rem;border-radius:980px;font-weight:600;transition:transform .25s,filter .25s}
+.pill:hover{transform:scale(1.04)}
+.lt{background:#f5f5f7;color:#1d1d1f}
+.go{background:var(--hot);color:#fff;box-shadow:0 10px 30px -10px rgba(255,45,135,.8)}
+
+/* Hero: the photos */
+.hero{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:6rem 0 4.5rem}
+.bg,.slide{position:absolute;inset:0;width:100%;height:100%}
+.slide{object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1.2s ease-in-out,transform 7s ease-out}
+.slide.on{opacity:1;transform:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,0,0,.4),transparent 28%),linear-gradient(to top,rgba(0,0,0,.8),transparent 55%)}
+.prog{position:absolute;left:0;bottom:0;z-index:3;height:3px;width:100%;background:var(--hot);transform-origin:left;transform:scaleX(0)}
+@keyframes fill{to{transform:scaleX(1)}}
+.in{position:relative;z-index:2;width:min(1080px,100% - 3rem);margin-inline:auto}
+.in>*{animation:up 1.1s cubic-bezier(.16,1,.3,1) both}
+.in>:nth-child(2){animation-delay:.15s}
+.in>:nth-child(3){animation-delay:.3s}
+@keyframes up{from{opacity:0;transform:translateY(28px)}}
+h1{font-size:clamp(2.6rem,7vw,5.5rem);text-shadow:0 2px 30px rgba(0,0,0,.45)}
+.lead{max-width:34rem;margin:.9rem 0 1.6rem;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.4;letter-spacing:-.015em;text-wrap:balance;text-shadow:0 1px 20px rgba(0,0,0,.5)}
+
+/* Productions */
+#shows{background:#000;padding:7rem 0 0}
+h2{font-size:clamp(2.4rem,6vw,4rem);text-align:center;margin-bottom:3.5rem}
+.tiles{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))}
+.tile{display:flex;flex-direction:column;background:#1d1d1f;color:#f5f5f7;border-radius:28px;overflow:hidden;text-align:center}
+.tile .t{margin-top:auto;padding:1.8rem 1.5rem 2.4rem}
+.tile h3{font-size:clamp(2rem,4vw,2.9rem);padding:2.8rem 1.5rem 1.8rem}
+.ph{overflow:hidden}
+.ph img{display:block;width:100%;height:auto;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+@media(min-width:768px){.ph img{height:24rem;object-fit:cover}}
+.tile:hover img{transform:scale(1.05)}
+.tile:hover .go{filter:brightness(1.12)}
+
+/* Gallery: a tidy grid of rounded photos */
+#stage{background:#000;padding:7rem 0 8rem}
+.bento{width:min(1080px,100% - 3rem);margin-inline:auto;display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr);grid-auto-rows:min(42vw,230px)}
+@media(min-width:768px){.bento{grid-template-columns:repeat(4,1fr);gap:1rem;grid-auto-rows:230px}}
+.bento img{display:block;width:100%;height:100%;object-fit:cover;border-radius:24px;background:#1d1d1f}
+.bento img:first-child{grid-column:span 2;grid-row:span 2}
+.bento img:nth-child(n+6){grid-column:span 2}
+
+footer{border-top:1px solid #1d1d1f;padding:2rem 0;font-size:.8125rem;color:#86868b;text-align:center}
+footer a:hover{color:#f5f5f7;text-decoration:underline}
+
+@media(max-width:480px){nav a.opt{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.in>*{animation:none}*{transition:none!important}}
+</style>
+</head>
+
+<body id="top">
+
+<nav>
+  <div class="c">
+    <a class="b" href="#top">SDA Productions WA</a>
+    <div><a href="#shows">Productions</a><a class="opt" href="#stage">Gallery</a></div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <img class="slide on" src="homeimages/486035663_1855750601903652_2252793329146107875_n.jpg" alt="">
+      <img class="slide" alt="">
+    </div>
+    <div class="prog" aria-hidden="true"></div>
+    <div class="in">
+      <h1>SDA Productions WA</h1>
+      <p class="lead">A youth theatre group in Western Australia, nurturing local talent through stage productions.</p>
+      <div><a class="pill lt" href="#shows">Explore productions</a></div>
+    </div>
+  </section>
+
+  <section id="shows">
+    <div class="c">
+      <h2>Our productions.</h2>
+      <div class="tiles">
+        <a class="tile" href="https://www.sdaproductionswa.com.au/legallyblonde">
+          <h3>Legally Blonde JR</h3>
+          <div class="ph"><img src="LegallyBlonde.jpg" alt="Legally Blonde JR - SDA Productions WA" loading="lazy" decoding="async"></div>
+          <div class="t"><span class="pill go">Audition now</span></div>
+        </a>
+        <a class="tile" href="https://www.sdaproductionswa.com.au/shrek">
+          <h3>Shrek Kids</h3>
+          <div class="ph"><img src="ShrekKids.jpg" alt="Shrek Kids - SDA Productions WA" loading="lazy" decoding="async"></div>
+          <div class="t"><span class="pill go">Audition now</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="stage">
+    <div class="c"><h2>From the stage.</h2></div>
+    <div class="bento" id="bento"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="c">© <span id="y">2026</span> SDA Productions WA. <a href="https://www.sdaproductionswa.com.au">Visit our full website</a></div>
+</footer>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+const first = '486035663_1855750601903652_2252793329146107875_n.jpg';
+const rest = [
+'486090259_1855750548570324_1518266976028074513_n.jpg',
+'486111428_1855750598570319_8565482492485227311_n.jpg',
+'486259208_1855750208570358_3613785565258713483_n.jpg',
+'622249808_10164599700326255_7894434441473250354_n.jpg',
+'HSMJR2026(19-07-2026)-15 (1).jpg',
+'HSMJR2026(19-07-2026)-17 (1).jpg',
+'HSMJR2026(19-07-2026)-2 (1).jpg',
+'HSMJR2026(19-07-2026)-20 (1).jpg',
+'HSMJR2026(19-07-2026)-41 (1).jpg',
+'HSMJR2026(19-07-2026)-63 (1).jpg',
+'HSMJR2026(19-07-2026)-66 (1).jpg',
+'HSMJR2026(19-07-2026)-9 (1).jpg'
+];
+for (let i = rest.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [rest[i], rest[j]] = [rest[j], rest[i]];
+}
+const order = [first, ...rest];
+const url = f => 'homeimages/' + encodeURI(f);
+const pos = f => f.includes('486111428') ? 'center 25%' : 'center';
+
+// Hero slideshow: two layers crossfade, each photo preloaded first
+const layers = document.querySelectorAll('.slide');
+let n = 0, cur = 0;
+const prog = document.querySelector('.prog');
+const fill = () => { prog.style.animation = 'none'; prog.offsetWidth; prog.style.animation = 'fill 5s linear forwards'; };
+if (!reduce) fill();
+if (!reduce) setInterval(() => {
+  n = (n + 1) % order.length;
+  const f = order[n], next = layers[1 - cur], im = new Image();
+  im.onload = () => {
+    next.src = im.src;
+    next.style.objectPosition = pos(f);
+    next.classList.add('on');
+    layers[cur].classList.remove('on');
+    cur = 1 - cur;
+    fill();
+  };
+  im.src = url(f);
+}, 5000);
+
+// Gallery grid: seven photos, different set each visit
+document.getElementById('bento').innerHTML = order.slice(1, 8).map(f =>
+  `<img src="${url(f)}" alt="" loading="lazy" decoding="async" style="object-position:${pos(f)}">`).join('');
+
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
