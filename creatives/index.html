@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Creatives | SDA Productions WA</title>
+<meta name="description" content="Meet the creatives behind SDA Productions WA, including the company team and the creative teams for Legally Blonde JR and Shrek Kids.">
+<meta name="theme-color" content="#0b0b0d">
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--lime:#a9c25a;--cyan:#5db8d1;--mag:#d04f93;--bg:#0b0b0d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#f5f5f7;font:400 1rem/1.6 Montserrat,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+.c{width:min(1080px,100% - 3rem);margin-inline:auto}
+
+nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(11,11,13,.7);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:3.25rem;font-size:.85rem}
+.b{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+nav a:not(.b){color:#c9c9ce;margin-left:1.6rem;transition:color .2s}
+nav a:not(.b):hover{color:#fff}
+.mb{display:none;background:none;border:0;color:#c9c9ce;font:inherit;font-size:.9rem;cursor:pointer;padding:.4rem 0}
+.ml{display:flex}
+nav a[aria-current]{color:#fff}
+@media(max-width:700px){.mb{display:block}.ml{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(11,11,13,.96);padding:.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)}.ml.open{display:flex}nav .ml a{margin:0;padding:.7rem 0;font-size:1rem}}
+
+main{flex:1;width:min(1080px,100% - 3rem);margin-inline:auto;padding:7.5rem 0 5rem}
+.bars{width:4.5rem;height:3px;margin-bottom:1.4rem;background:linear-gradient(90deg,var(--lime) 0 30%,transparent 30% 35%,var(--cyan) 35% 65%,transparent 65% 70%,var(--mag) 70%)}
+.lead{margin-top:1rem;max-width:36rem;color:#c9c9ce}
+
+.grp{margin-top:4.5rem}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:1.8rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.14)}
+.grid{display:grid;gap:2rem 1rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.p{display:block;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0}
+.pic{position:relative;display:block;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#1a1a1d;margin-bottom:.8rem}
+.pic b{position:absolute;inset:0;display:grid;place-items:center;font-size:2.2rem;font-weight:700;color:#4a4a50}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.p .pic::after{content:"+";position:absolute;right:.6rem;bottom:.6rem;z-index:1;width:1.9rem;height:1.9rem;border-radius:50%;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:grid;place-items:center;font-size:1.2rem;line-height:1}
+.p:hover img{transform:scale(1.04)}
+.p strong{display:block;font-weight:700;letter-spacing:-.01em}
+.p em{font-style:normal;color:#9b9ba2;font-size:.9rem}
+
+dialog{border:0;border-radius:24px;background:#151518;color:#f5f5f7;width:min(680px,100% - 2rem);padding:0;margin:auto;max-height:calc(100% - 2rem);overflow:auto;overscroll-behavior:contain}
+dialog::backdrop{background:rgba(0,0,0,.65);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.bd{display:grid;gap:1.5rem;padding:1.5rem}
+@media(min-width:640px){.bd{grid-template-columns:240px 1fr;padding:2rem;gap:2rem}}
+.bd .pic{margin:0}
+@media(max-width:639px){.bd .pic{max-width:14rem}}
+.bd .pic::after{display:none}
+.bd h3{font-size:1.8rem}
+.rl{color:#9b9ba2;margin:.3rem 0 1rem}
+.x{position:absolute;top:.8rem;right:.8rem;z-index:2;width:2.2rem;height:2.2rem;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer}
+.x:hover{background:rgba(255,255,255,.22)}
+
+#bt p+p{margin-top:.9rem}
+footer{border-top:1px solid rgba(255,255,255,.1);padding:2rem 0;font-size:.8rem;color:#8e8e93;text-align:center}
+footer a:hover{color:#f5f5f7;text-decoration:underline}
+body{position:relative;isolation:isolate;overflow-x:clip}
+.pgbg{position:absolute;inset:0 0 auto;height:min(52vh,460px);z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent)}
+.pgbg img{display:block;width:100%;height:100%;object-fit:cover;opacity:.45;animation:pgf 1s both}
+@keyframes pgf{from{opacity:0}}
+</style>
+<link rel="stylesheet" href="../anim.css">
+</head>
+
+<body>
+<div class="pgbg" aria-hidden="true"><img src="../homeimages/HSMJR2026(19-07-2026)-15%20(1).jpg" alt=""></div>
+
+<nav>
+  <div class="c">
+    <a class="b" href="../">SDA Productions WA</a>
+    <button class="mb" aria-expanded="false" aria-controls="ml">Menu</button>
+    <div class="ml" id="ml"><a href="../#shows">Productions</a><a href="../creatives/" aria-current="page">Creatives</a><a href="../previous-musicals/">Previous musicals</a><a href="../#stage">Gallery</a><a href="../contact/">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+  <div class="bars"></div>
+  <h1>Our creatives</h1>
+  <p class="lead">The team behind our productions. Tap a headshot to read more.</p>
+  <div id="groups"><noscript><p class="lead">Please turn on JavaScript to see our creatives.</p></noscript></div>
+</main>
+
+<dialog id="bio" aria-labelledby="bn">
+  <button class="x" aria-label="Close">×</button>
+  <div class="bd">
+    <span class="pic" id="bp"></span>
+    <div><h3 id="bn"></h3><p class="rl" id="br"></p><div id="bt"></div></div>
+  </div>
+</dialog>
+
+<footer>
+  <div class="c">© <span id="y">2026</span> SDA Productions WA. <a href="https://www.sdaproductionswa.com.au">Visit our full website</a></div>
+</footer>
+
+<script>
+/* Headshots live in the headshots folder, named after the person: headshots/billyhewett.png */
+const GROUPS = [
+  ['Company', [
+    ['hayleygreen', 'Hayley Green', 'Producer'],
+    ['izzigreen', 'Izzi Green', 'Creative Director'],
+    ['billyhewett', 'Billy Hewett', 'Creative Director']
+  ]],
+  ['Legally Blonde JR', [
+    ['billyhewett', 'Billy Hewett', 'Director'],
+    ['catherinehaydon', 'Catherine Haydon', 'Music Director'],
+    ['taylaedwards', 'Tayla Edwards', 'Choreographer'],
+    ['milliecullender', 'Millie Cullender', 'Associate Director'],
+    ['emmabeaman', 'Emma Beaman', 'Assistant Choreographer']
+  ]],
+  ['Shrek Kids', [
+    ['brockklompmaker', 'Brock Klompmaker', 'Director'],
+    ['jamiepapanicolaou', 'Jamie Papanicolaou', 'Music Director']
+  ]]
+];
+
+/* EDIT BIOS HERE: each bio is a list, with one set of quotes per paragraph. An empty list shows "Bio coming soon." */
+const BIOS = {
+  hayleygreen: ["Hayley Green has over 30 years experience as a dance teacher and studio principal, having owned successful dance schools in Australia and the UK."],
+  izzigreen: ["Izzi is a Perth-based performer, educator, and choreographer, having trained in a Diploma and Certificate IV of Musical Theatre at APAN Academy. She performs professionally across Australia and was recently seen in Melbourne as Annette in Saturday Night Fever. Other credits include Hope Cladwell in Urinetown, Deb in Ordinary Days, Arista in The Little Mermaid, Bad Idea Bear in Avenue Q, Sophie (understudy) in Mamma Mia!, and as an ensemble performer in The Wedding Singer and Monty Python at Planet Royale, and Legally Blonde at Crown Theatre."],
+  billyhewett: ["Billy Hewett has been performing for over 18 years, and has appeared in productions including We Will Rock You, The Addams Family, Peter Pan, and Holy Musical Batman.", "Billy is currently studying a Bachelor of Production and Design at WAAPA after completing both a Diploma and an Advanced Diploma of Live Production and Technical Services. While his studies have led him into lighting and production, his love of musical theatre and working with young performers has always remained at the heart of what he does."],
+  catherinehaydon: ["Catherine has been teaching music for more than two decades and being involved in musicals is one of her all-time favourite things. She is a full-time music specialist teacher at John XXIII College in Mount Claremont where she runs the primary music program and directs a number of choirs. She is also the music director at St Joseph’s Church in Subiaco where she performs for weddings. As a member of Perth Broadway Chorus, she enjoys performing with WASO in their Christmas Spectacular concerts. Catherine has been teaching in her own piano studio for over twenty years and is an examiner with the Australian Guild of Music and Speech. She has been involved in musicals from a young age, performing as Eliza in My Fair Lady and Aunt Eller in Oklahoma! She has also played in the orchestra for shows including Wicked, The Wedding Singer and All Shook Up, and has written, directed and produced a number of musicals for children."],
+  taylaedwards: ["Tayla Edwards starred as an adult ensemble member in Hama Productions’ ‘Annie’ in April 2024, as well as playing the role of Marmee in Emergent Academy’s production of Little Women, where she completed her diploma of musical theatre. Previously, she enchanted audiences as Santa’s Elf at Myer Santaland Perth City and Karrinyup from 2019 to 2025, mastering improvisation and creating magical Christmas experiences for children. Tayla has excelled in various corporate events such as Telethon and the Crown RAC Ball, and featured prominently in Vogue Performers’ promotions. With over 5 years as a dance teacher at Vogue Performers, she passionately nurtures young talents across multiple disciplines."],
+  milliecullender: [],
+  emmabeaman: ["Emma Beaman is a dedicated and accomplished dance artist with over 17 years of training. She brings extensive experience in both performance and education and is passionate about nurturing the next generation of performers. Emma currently teaches at Sing Dance Act WA, where she enjoys sharing her love of dance with emerging artists. Her formal training includes a Certificate III in Dance, Certificate IV in Dance, and a Diploma of Professional Dance, reflecting her strong technical foundation and ongoing commitment to professional excellence."],
+  brockklompmaker: ["Brock Klompmaker (he/him) is a 20-year-old musical theatre performer who has recently completed his Diploma of Musical Theatre at WAAPA and will commence his Bachelor of Music Theatre there in 2026. He also holds a Certificate IV in Musical Theatre from Emergent Academy (2024).", "Brock made his professional debut with HAMA Productions’ Mamma Mia, performing in both the Regal and Mandurah seasons and covering the role of Sky in Mandurah. His other credits include The Drowsy Chaperone (WAAPA) and Little Women (Emergent Academy). In 2023, he was a Student Ambassador for Black Swan State Theatre Company.", "Driven and collaborative, Brock is thrilled to be joining SDA Productions, making his directorial debut and bringing Frozen: Kids Edition to the stage."],
+  jamiepapanicolaou: ["Jamie has been teaching Musical Theatre and Dance for fifteen years, having enjoyed his own long and varied stage career. He has performed on the West End and internationally in a number of musicals.", "He has a degree in Musical Theatre which he earned at Arts Educational Schools in the U.K. Since moving to Perth from the U.K. in 2018, Jamie has enjoyed teaching his craft at a number of studios all around Perth. Alongside teaching, he can be found singing at various gigs, and performing as a role play actor for The Experience Lab."]
+};
+
+const ini = n => n.split(' ').map(w => w[0]).join('');
+const pic = (id, name) => `<b>${ini(name)}</b><img src="../headshots/${id}.png" alt="Headshot of ${name}" decoding="async" onerror="this.remove()">`;
+
+document.getElementById('groups').innerHTML = GROUPS.map(([title, people]) =>
+  `<section class="grp"><h2>${title}</h2><div class="grid">` +
+  people.map(([id, name, role]) =>
+    `<button class="p" data-id="${id}" data-name="${name}" data-role="${role}"><span class="pic">${pic(id, name)}</span><strong>${name}</strong><em>${role}</em></button>`
+  ).join('') + `</div></section>`).join('');
+
+const dlg = document.getElementById('bio');
+document.getElementById('groups').addEventListener('click', e => {
+  const p = e.target.closest('.p');
+  if (!p) return;
+  const { id, name, role } = p.dataset;
+  document.getElementById('bp').innerHTML = pic(id, name);
+  document.getElementById('bn').textContent = name;
+  document.getElementById('br').textContent = role;
+  document.getElementById('bt').replaceChildren(...(BIOS[id] && BIOS[id].length ? BIOS[id] : ['Bio coming soon.']).map(t => Object.assign(document.createElement('p'), { textContent: t })));
+  dlg.showModal();
+});
+dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('.x')) dlg.close(); });
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script>
+(()=>{const b=document.querySelector('.mb'),m=document.getElementById('ml');b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.onclick=e=>{if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}}})();
+</script>
+<script src="../anim.js"></script>
+</body>
+</html>
