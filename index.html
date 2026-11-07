@@ -74,7 +74,10 @@ h2{font-size:clamp(2.2rem,5.5vw,3.6rem);margin-bottom:3rem}
 .shot{display:block;overflow:hidden;border-radius:20px;background:#1a1a1d}
 .shot img{display:block;width:100%;height:auto;transition:transform .9s cubic-bezier(.16,1,.3,1)}
 @media(min-width:768px){.shot img{height:24rem;object-fit:cover}}
-.shot:hover img{transform:scale(1.04)}
+.ann{padding:1.3rem 0;text-align:center;border-block:1px solid rgba(255,255,255,.1);background:#0b0b0d;position:relative;z-index:2;font-size:clamp(.95rem,1.8vw,1.1rem);color:#c9c9ce}
+.ann a{display:inline-block;transition:color .3s}.ann a:hover{color:#fff}.ann b{color:#f5f5f7;font-weight:700}
+.show{padding-top:1.4rem;border-top:3px solid var(--u,#fff)}.show:nth-child(1){--u:var(--mag)}.show:nth-child(2){--u:var(--lime)}
+.show h3{font-size:clamp(2rem,4.4vw,3rem);margin-bottom:.4rem}
 
 /* Gallery */
 #stage{padding:3rem 0 8rem}
@@ -119,7 +122,7 @@ footer a:hover{color:#f5f5f7;text-decoration:underline}
     </div>
   </section>
 
-  <div class="mq" aria-hidden="true"><div class="mq-t"><div class="mq-h"><span>Matilda JR</span><span>Frozen Kids</span><span>High School Musical JR</span><span>Legally Blonde JR</span><span>Shrek Kids</span><span>Matilda JR</span><span>Frozen Kids</span><span>High School Musical JR</span><span>Legally Blonde JR</span><span>Shrek Kids</span></div><div class="mq-h"><span>Matilda JR</span><span>Frozen Kids</span><span>High School Musical JR</span><span>Legally Blonde JR</span><span>Shrek Kids</span><span>Matilda JR</span><span>Frozen Kids</span><span>High School Musical JR</span><span>Legally Blonde JR</span><span>Shrek Kids</span></div></div></div>
+  <div class="ann"><div class="c"><a href="#shows"><b>Legally Blonde JR</b> &amp; <b>Shrek Kids</b> auditions in November</a></div></div>
 
   <section id="shows">
     <div class="shows-bg" aria-hidden="true"><img src="homeimages/HSMJR2026(19-07-2026)-63%20(1).jpg" alt=""></div>
@@ -129,12 +132,10 @@ footer a:hover{color:#f5f5f7;text-decoration:underline}
       <div class="shows">
         <article class="show">
           <h3>Legally Blonde JR</h3>
-          <a class="shot" href="https://www.sdaproductionswa.com.au/legallyblonde" tabindex="-1" aria-hidden="true"><img src="LegallyBlonde.jpg" alt="" decoding="async"></a>
           <a class="lnk" style="--u:var(--mag)" href="https://www.sdaproductionswa.com.au/legallyblonde">Audition now</a>
         </article>
         <article class="show">
           <h3>Shrek Kids</h3>
-          <a class="shot" href="https://www.sdaproductionswa.com.au/shrek" tabindex="-1" aria-hidden="true"><img src="ShrekKids.jpg" alt="" decoding="async"></a>
           <a class="lnk" style="--u:var(--lime)" href="https://www.sdaproductionswa.com.au/shrek">Audition now</a>
         </article>
       </div>
