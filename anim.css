@@ -42,7 +42,7 @@ dialog[open]::backdrop{animation:fade .4s both}
 .ev{position:relative;padding:0 0 2.6rem 3rem;--c:var(--lime)}
 .ev:nth-of-type(3n+2){--c:var(--cyan)}.ev:nth-of-type(3n){--c:var(--mag)}
 .dot{position:absolute;top:1.7rem;left:14px;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--bg);border:3px solid rgba(255,255,255,.25);z-index:2;transition:all .6s cubic-bezier(.16,1,.3,1) .3s}
-.ev.vis .dot{background:var(--c);border-color:var(--c);box-shadow:0 0 22px var(--c);transform:scale(1.25)}
+.ev.lit .dot{background:var(--c);border-color:var(--c);box-shadow:0 0 22px var(--c);transform:scale(1.25)}
 .ev.up .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--c);animation:ping 1.8s ease-out infinite}
 @keyframes ping{to{transform:scale(2.8);opacity:0}}
 .card{position:relative;padding:1.5rem 1.7rem;border-radius:22px;background:#151518;border:1px solid rgba(255,255,255,.1);overflow:hidden;transition:border-color .4s}
@@ -62,6 +62,7 @@ dialog[open]::backdrop{animation:fade .4s both}
 .ev{width:50%;padding:0 3.2rem 2.8rem 0}
 .ev:nth-of-type(even){margin-left:50%;padding:0 0 2.8rem 3.2rem}
 .ev:nth-of-type(odd) .dot{left:100%}
+.ev:nth-of-type(even) .dot{left:0}
 .ev:nth-of-type(odd) .card{text-align:right}
 .ev:nth-of-type(odd) .card::before{left:auto;right:0}
 .js-anim .ev:nth-of-type(odd) .card{transform:translateX(-70px) scale(.95)}
@@ -69,3 +70,6 @@ dialog[open]::backdrop{animation:fade .4s both}
 .js-anim .ev.vis .card{transform:none}
 }
 @media(prefers-reduced-motion:reduce){.sp{display:none}.send,.ev.up .dot::after,.ev.up .tag{animation:none}}
+/* stop parallax images spilling past the page edges */
+.pgbg,.shows-bg{overflow:hidden}
+html,body{overflow-x:clip}
