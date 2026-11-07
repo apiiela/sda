@@ -73,3 +73,6 @@ dialog[open]::backdrop{animation:fade .4s both}
 /* stop parallax images spilling past the page edges */
 .pgbg,.shows-bg{overflow:hidden}
 html,body{overflow-x:clip}
+/* keep zoomed photos inside their rounded corners */
+.pic{clip-path:inset(0 round 18px)}
+.shot{clip-path:inset(0 round 20px)}
