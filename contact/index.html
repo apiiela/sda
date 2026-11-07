@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact | SDA Productions WA</title>
+<meta name="description" content="Get in touch with SDA Productions WA.">
+<meta name="theme-color" content="#0b0b0d">
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--lime:#a9c25a;--cyan:#5db8d1;--mag:#d04f93;--bg:#0b0b0d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#f5f5f7;font:400 1rem/1.6 Montserrat,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:8px}
+h1{font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.035em;line-height:1.08}
+.c{width:min(1080px,100% - 3rem);margin-inline:auto}
+
+nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(11,11,13,.7);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:3.25rem;font-size:.85rem}
+.b{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+nav a:not(.b){color:#c9c9ce;margin-left:1.6rem;transition:color .2s}
+nav a:not(.b):hover{color:#fff}
+.mb{display:none;background:none;border:0;color:#c9c9ce;font:inherit;font-size:.9rem;cursor:pointer;padding:.4rem 0}
+.ml{display:flex}
+nav a[aria-current]{color:#fff}
+@media(max-width:700px){.mb{display:block}.ml{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(11,11,13,.96);padding:.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)}.ml.open{display:flex}nav .ml a{margin:0;padding:.7rem 0;font-size:1rem}}
+
+main{flex:1;width:min(680px,100% - 3rem);margin-inline:auto;padding:7.5rem 0 5rem}
+.bars{width:4.5rem;height:3px;margin-bottom:1.4rem;background:linear-gradient(90deg,var(--lime) 0 30%,transparent 30% 35%,var(--cyan) 35% 65%,transparent 65% 70%,var(--mag) 70%)}
+.lead{margin:1rem 0 2.5rem;color:#c9c9ce}
+
+form{display:grid;gap:1.2rem}
+.row{display:grid;gap:1.2rem}
+@media(min-width:640px){.row{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:.85rem;font-weight:600;color:#c9c9ce}
+input,select,textarea{display:block;width:100%;margin-top:.4rem;padding:.9rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:#151518;color:#f5f5f7;font:inherit;transition:border-color .2s}
+textarea{min-height:10rem;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan)}
+.hp{position:absolute;left:-9999px}
+.send{justify-self:start;margin-top:.4rem;padding:.85rem 1.9rem;border:0;border-radius:980px;background:#f5f5f7;color:#1d1d1f;font:inherit;font-weight:700;cursor:pointer;transition:transform .25s,opacity .25s}
+.send:hover{transform:scale(1.04)}
+.send:disabled{opacity:.5;cursor:default;transform:none}
+#st{min-height:1.6rem;font-size:.95rem}
+#st.ok{color:var(--lime)}
+#st.err{color:#ff8fa3}
+
+footer{border-top:1px solid rgba(255,255,255,.1);padding:2rem 0;font-size:.8rem;color:#8e8e93;text-align:center}
+footer a:hover{color:#f5f5f7;text-decoration:underline}
+body{position:relative;isolation:isolate;overflow-x:clip}
+.pgbg{position:absolute;inset:0 0 auto;height:min(52vh,460px);z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent)}
+.pgbg img{display:block;width:100%;height:100%;object-fit:cover;opacity:.45;animation:pgf 1s both}
+@keyframes pgf{from{opacity:0}}
+</style>
+<link rel="stylesheet" href="../anim.css">
+</head>
+
+<body>
+<div class="pgbg" aria-hidden="true"><img src="../homeimages/HSMJR2026(19-07-2026)-41%20(1).jpg" alt=""></div>
+
+<nav>
+  <div class="c">
+    <a class="b" href="../">SDA Productions WA</a>
+    <button class="mb" aria-expanded="false" aria-controls="ml">Menu</button>
+    <div class="ml" id="ml"><a href="../#shows">Productions</a><a href="../creatives/">Creatives</a><a href="../previous-musicals/">Previous musicals</a><a href="../#stage">Gallery</a><a href="../contact/" aria-current="page">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+  <div class="bars"></div>
+  <h1>Contact us</h1>
+  <p class="lead">Send us a message and we’ll get back to you.</p>
+
+  <form id="f">
+    <div class="row">
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Your email<input type="email" name="email" autocomplete="email" required></label>
+    </div>
+    <label>What’s it about?
+      <select name="topic">
+        <option>General enquiry</option>
+        <option>Auditions</option>
+      </select>
+    </label>
+    <label>Message<textarea name="message" required></textarea></label>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="send" type="submit">Send message</button>
+    <p id="st" role="status" aria-live="polite"></p>
+  </form>
+</main>
+
+<footer>
+  <div class="c">© <span id="y">2026</span> SDA Productions WA. <a href="https://www.sdaproductionswa.com.au">Visit our full website</a></div>
+</footer>
+
+<script>
+/* Get a free access key at web3forms.com (enter the email that should receive messages) and paste it here */
+const ACCESS_KEY = 'PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+
+const f = document.getElementById('f'), st = document.getElementById('st'), btn = f.querySelector('.send');
+const say = (t, c = '') => { st.textContent = t; st.className = c; };
+
+f.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (ACCESS_KEY.startsWith('PASTE')) { say('This form isn’t connected yet. Add the Web3Forms access key in contact/index.html.', 'err'); return; }
+  btn.disabled = true; say('Sending…');
+  const data = Object.fromEntries(new FormData(f));
+  Object.assign(data, { access_key: ACCESS_KEY, subject: 'New message from the SDA Productions WA website', from_name: 'SDA Productions WA website' });
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!j.success) throw new Error(j.message);
+    f.reset(); say('Thanks, your message has been sent.', 'ok');
+  } catch (err) {
+    say('Something went wrong sending that. Please try again in a moment.', 'err');
+  }
+  btn.disabled = false;
+});
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script>
+(()=>{const b=document.querySelector('.mb'),m=document.getElementById('ml');b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.onclick=e=>{if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}}})();
+</script>
+<script src="../anim.js"></script>
+</body>
+</html>
