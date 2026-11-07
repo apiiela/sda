@@ -1,6 +1,5 @@
 /* SDA Productions WA - shared animation layer */
 .sp{position:fixed;top:0;left:0;height:3px;width:100%;z-index:200;background:linear-gradient(90deg,var(--lime),var(--cyan),var(--mag));transform-origin:left;transform:scaleX(0);pointer-events:none}
-.glow{position:fixed;left:0;top:0;width:44rem;height:44rem;margin:-22rem 0 0 -22rem;border-radius:50%;pointer-events:none;z-index:0;mix-blend-mode:screen;background:radial-gradient(circle,rgba(93,184,209,.14),rgba(208,79,147,.07) 40%,transparent 65%)}
 nav{animation:navin .9s cubic-bezier(.16,1,.3,1) both}
 @keyframes navin{from{transform:translateY(-100%)}}
 .b{transition:transform .3s}.b:hover{transform:scale(1.05)}
@@ -25,15 +24,6 @@ nav a:not(.b):hover::after,nav a[aria-current]::after{transform:scaleX(1)}
 .lnk::after{content:" \2192";display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .lnk:hover::after{transform:translateX(7px)}
 /* marquee */
-.mq{overflow:hidden;border-block:1px solid rgba(255,255,255,.12);padding:1.2rem 0;background:#0b0b0d;position:relative;z-index:2}
-.mq-t{display:flex;width:max-content;animation:mq 40s linear infinite}
-.mq:hover .mq-t{animation-play-state:paused}
-.mq-h{display:flex;flex-shrink:0}
-.mq span{font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:-.03em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(245,245,247,.55)}
-.mq span:nth-child(even){color:#f5f5f7;-webkit-text-stroke:0}
-.mq span::after{content:"\2726";margin:0 2.2rem;font-size:.6em;vertical-align:.25em;-webkit-text-stroke:0;color:var(--lime)}
-.mq span:nth-child(3n+2)::after{color:var(--cyan)}.mq span:nth-child(3n)::after{color:var(--mag)}
-@keyframes mq{to{transform:translateX(-50%)}}
 /* form + dialog */
 input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px rgba(93,184,209,.2)}
 .send{position:relative;animation:pulse 2.6s ease-in-out infinite}
@@ -48,7 +38,7 @@ dialog[open]::backdrop{animation:fade .4s both}
 .tl{--prog:0;position:relative;margin-top:3.5rem;padding-bottom:2rem}
 .tl-line{position:absolute;top:0;bottom:0;left:14px;width:3px;margin-left:-1.5px;border-radius:3px;background:rgba(255,255,255,.1)}
 .tl-line i{position:absolute;inset:0;border-radius:3px;background:linear-gradient(var(--lime),var(--cyan),var(--mag));transform-origin:top;transform:scaleY(var(--prog));box-shadow:0 0 14px rgba(93,184,209,.6)}
-.yrh{position:relative;z-index:1;width:fit-content;margin:1.5rem 0 2rem 2.2rem;padding:.2rem 1rem;background:var(--bg);font-size:clamp(3rem,9vw,6rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:transparent;-webkit-text-stroke:2px #9b9ba2}
+.yrh{position:relative;z-index:1;width:fit-content;margin:1.5rem 0 2rem 2.2rem;padding:.2rem 1rem;background:var(--bg);font-size:clamp(3rem,9vw,6rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:#9b9ba2}
 .ev{position:relative;padding:0 0 2.6rem 3rem;--c:var(--lime)}
 .ev:nth-of-type(3n+2){--c:var(--cyan)}.ev:nth-of-type(3n){--c:var(--mag)}
 .dot{position:absolute;top:1.7rem;left:14px;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--bg);border:3px solid rgba(255,255,255,.25);z-index:2;transition:all .6s cubic-bezier(.16,1,.3,1) .3s}
@@ -78,4 +68,4 @@ dialog[open]::backdrop{animation:fade .4s both}
 .js-anim .ev:nth-of-type(even) .card{transform:translateX(70px) scale(.95)}
 .js-anim .ev.vis .card{transform:none}
 }
-@media(prefers-reduced-motion:reduce){.sp,.glow{display:none}.mq-t,.send,.ev.up .dot::after,.ev.up .tag{animation:none}}
+@media(prefers-reduced-motion:reduce){.sp{display:none}.send,.ev.up .dot::after,.ev.up .tag{animation:none}}
