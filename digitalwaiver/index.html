@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Waiver | SDA Productions WA</title>
+<meta name="description" content="Media consent and participation waiver for SDA Productions WA participants.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b0b0d">
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--lime:#a9c25a;--cyan:#5db8d1;--mag:#d04f93;--bg:#0b0b0d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#f5f5f7;font:400 1rem/1.6 Montserrat,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+h1{font-weight:800;font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
+.c{width:min(1080px,100% - 3rem);margin-inline:auto}
+
+nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(11,11,13,.7);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .c{display:flex;justify-content:space-between;align-items:center;height:3.25rem;font-size:.85rem}
+.b{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+nav a:not(.b){color:#c9c9ce;margin-left:1.6rem;transition:color .2s}
+nav a:not(.b):hover{color:#fff}
+
+main{flex:1;width:min(860px,100% - 2rem);margin-inline:auto;padding:7.5rem 0 5rem}
+.bars{width:4.5rem;height:3px;margin-bottom:1.4rem;background:linear-gradient(90deg,var(--lime) 0 30%,transparent 30% 35%,var(--cyan) 35% 65%,transparent 65% 70%,var(--mag) 70%)}
+.lead{margin:1rem 0 2.5rem;max-width:36rem;color:#c9c9ce}
+.form{background:#fff;border-radius:20px;overflow:hidden;min-height:12rem}
+.help{margin-top:1.2rem;font-size:.85rem;color:#8e8e93}
+.help a{color:#f5f5f7;border-bottom:1px solid var(--cyan)}
+
+footer{border-top:1px solid rgba(255,255,255,.1);padding:2rem 0;font-size:.8rem;color:#8e8e93;text-align:center}
+footer a:hover{color:#f5f5f7;text-decoration:underline}
+.mb{display:none;background:none;border:0;color:#c9c9ce;font:inherit;font-size:.9rem;cursor:pointer;padding:.4rem 0}
+.ml{display:flex}
+nav a[aria-current]{color:#fff}
+@media(max-width:700px){.mb{display:block}.ml{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(11,11,13,.96);padding:.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)}.ml.open{display:flex}nav .ml a{margin:0;padding:.7rem 0;font-size:1rem}}
+body{position:relative;isolation:isolate;overflow-x:clip}
+.pgbg{position:absolute;inset:0 0 auto;height:min(52vh,460px);z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent)}
+.pgbg img{display:block;width:100%;height:100%;object-fit:cover;opacity:.45;animation:pgf 1s both}
+@keyframes pgf{from{opacity:0}}
+</style>
+<link rel="stylesheet" href="../anim.css">
+</head>
+
+<body>
+<div class="pgbg" aria-hidden="true"><img src="../homeimages/HSMJR2026(19-07-2026)-66%20(1).jpg" alt=""></div>
+
+<nav>
+  <div class="c">
+    <a class="b" href="../">SDA Productions WA</a>
+    <button class="mb" aria-expanded="false" aria-controls="ml">Menu</button>
+    <div class="ml" id="ml"><a href="../#shows">Productions</a><a href="../creatives/">Creatives</a><a href="../previous-musicals/">Previous musicals</a><a href="../#stage">Gallery</a><a href="../contact/">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+  <div class="bars"></div>
+  <h1>Media consent &amp; participation waiver</h1>
+  <p class="lead">Please complete one waiver for each participant. A parent or guardian needs to fill in and sign the form.</p>
+
+  <div class="form">
+    <script type="text/javascript" src="https://form.jotform.com/jsform/263102166286050"></script>
+  </div>
+
+  <p class="help">Form not showing? <a href="https://form.jotform.com/263102166286050">Open it in a new tab</a>.</p>
+</main>
+
+<footer>
+  <div class="c">© <span id="y">2026</span> SDA Productions WA. <a href="https://www.sdaproductionswa.com.au">Visit our full website</a></div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+(()=>{const b=document.querySelector('.mb'),m=document.getElementById('ml');b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.onclick=e=>{if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}}})();
+</script>
+<script src="../anim.js"></script>
+</body>
+</html>
