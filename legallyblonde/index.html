@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://www.sdaproductionswa.com.au/legallyblonde/auditions">
-    <title>Redirecting to Audition page...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Legally Blonde JR | SDA Productions WA</title>
+<meta name="description" content="SDA Productions WA presents Legally Blonde JR. Coming soon. 30–31 January 2027.">
+<meta name="theme-color" content="#e0198a">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+html{background:#d4157f}
+body{min-height:100vh;min-height:100svh;color:#fff;font:400 1rem/1.6 Montserrat,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(1.2rem,3.5vh,2.2rem);text-align:center;padding:calc(2rem + env(safe-area-inset-top,0px)) 1.5rem calc(2rem + env(safe-area-inset-bottom,0px));position:relative;isolation:isolate;overflow-x:clip;background:radial-gradient(ellipse at 50% 0,#ff7cc4,transparent 60%),linear-gradient(160deg,#ff4fab,#e0198a 55%,#b80a6b)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:8px}
+.sda{display:block;width:clamp(110px,22vw,160px);height:auto;animation:fade 1.2s .1s both}
+.stage{background:#fff;border-radius:32px;padding:clamp(1.5rem,4vw,2.6rem) clamp(1.5rem,5vw,3.5rem) 0;width:min(620px,100%);box-shadow:0 30px 80px rgba(120,0,70,.35);display:flex;flex-direction:column;align-items:center;gap:1.2rem;overflow:hidden;animation:rise 1.2s .25s cubic-bezier(.16,1,.3,1) both}
+.logo{display:block;width:min(100%,460px);height:auto}
+.dog{display:block;width:auto;max-width:70%;max-height:min(30vh,260px);height:auto;margin-top:auto;transform-origin:50% 100%;animation:bob 4.5s ease-in-out 1.6s infinite}
+.soon{font-weight:800;font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:-.035em;line-height:1.05;animation:rise 1.1s .6s cubic-bezier(.16,1,.3,1) both}
+.dates{margin-top:.5rem;font-weight:600;font-size:clamp(1.05rem,2.6vw,1.35rem);letter-spacing:.02em;animation:rise 1.1s .8s cubic-bezier(.16,1,.3,1) both}
+.bars{width:4.5rem;height:3px;margin:1.1rem auto 0;background:#fff;opacity:.8;border-radius:3px;transform-origin:center;animation:draw 1.2s 1s cubic-bezier(.16,1,.3,1) both}
+.back{font-size:.85rem;opacity:.85;border-bottom:1px solid rgba(255,255,255,.6);animation:fade 1.2s 1.2s both}
+.back:hover{opacity:1}
+.sp{position:absolute;z-index:-1;color:#fff;opacity:0;pointer-events:none;animation:float linear infinite}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.97)}}
+@keyframes fade{from{opacity:0}}
+@keyframes draw{from{transform:scaleX(0)}}
+@keyframes bob{50%{transform:translateY(-6px) rotate(-1.5deg)}}
+@keyframes float{0%{opacity:0;transform:translateY(0) rotate(0)}15%{opacity:.5}85%{opacity:.35}100%{opacity:0;transform:translateY(-70vh) rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.sp{display:none}}
+</style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://www.sdaproductionswa.com.au/legallyblonde/auditions">Click here to go to the Audition information.</a>.</p>
+<a href="../" aria-label="SDA Productions WA home"><img class="sda" src="../SDAWhite.png" alt="SDA Productions WA"></a>
+
+<main style="display:contents">
+  <div class="stage">
+    <h1 style="font-size:0"><img class="logo" src="../LEGALLYBLONDEJR_LOGO_FULL_4C.png" alt="Legally Blonde JR"></h1>
+    <img class="dog" src="../LEGALLYBLONDE_XA_DOG_4C.png" alt="" decoding="async">
+  </div>
+  <div>
+    <p class="soon">Coming soon</p>
+    <p class="dates">30 – 31 January 2027</p>
+    <div class="bars"></div>
+  </div>
+</main>
+
+<a class="back" href="../">Back to SDA Productions WA</a>
+
+<script>
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  for(let i=0;i<14;i++){
+    const s=document.createElement('span');
+    s.className='sp';s.textContent='✦';s.setAttribute('aria-hidden','true');
+    s.style.cssText='left:'+(Math.random()*96)+'%;bottom:-2rem;font-size:'+(.7+Math.random()*1.3)+'rem;animation-duration:'+(14+Math.random()*12)+'s;animation-delay:'+(-Math.random()*20)+'s';
+    document.body.appendChild(s);
+  }
+}
+</script>
 </body>
 </html>
